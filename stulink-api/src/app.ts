@@ -16,7 +16,7 @@ app.use(express.json());
 //connect MongoDB
 const connectdb = async () => {
   try {
-   const conn = await mongoose.connect(process.env.MONGO, {
+    const conn = await mongoose.connect(process.env.MONGO, {
       // useNewUrlParser: true,
       // useUnifiedTopology: true,
     });
@@ -26,6 +26,7 @@ const connectdb = async () => {
     process.exit(1);
   }
 };
+connectdb();
 
 //routes
 app.get("/", (req: express.Request, res: express.Response) => {
@@ -35,6 +36,5 @@ app.use("/dashboard", dashboardRoute);
 
 //port
 app.listen(port, () => {
-  connectdb();
   console.log(`server running on port ${port}`);
 });

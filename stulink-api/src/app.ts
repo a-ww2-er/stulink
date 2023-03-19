@@ -11,16 +11,19 @@ const port = process.env.PORT;
 const app: express.Application = express();
 
 //middlewares
-app.use(express.json())
+app.use(express.json());
 
 //connect MongoDB
 const connectdb = async () => {
   try {
-    // await mongoose.connect(process.env.MONGO); 
-    console.log(`Connected to MongoDB`);
-    
+   const conn = await mongoose.connect(process.env.MONGO, {
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
+    });
+    console.log(`Connected to MongoDB :${conn.connection.host}`);
   } catch (error) {
     console.log(error);
+    process.exit(1);
   }
 };
 
@@ -32,6 +35,6 @@ app.use("/dashboard", dashboardRoute);
 
 //port
 app.listen(port, () => {
-  connectdb()
+  connectdb();
   console.log(`server running on port ${port}`);
 });

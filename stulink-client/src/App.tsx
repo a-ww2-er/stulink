@@ -1,19 +1,28 @@
 import "./App.scss";
-import { images } from "./images";
-
-function App() {
+import Nav from "./components/NavBar/molecules/Nav";
+import { Route, Routes } from "react-router-dom";
+import SidePanel from "./components/SidePanel/molecules/SidePanel";
+import DashBoard from './components/Dashboard/molecules/DashBoard';
+import Footer from "./components/Footer/molecules/Footer";
+const App = () => {
   return (
     <div className="App">
-      <h1>
-        Stu
-        <span>link</span>
-      </h1>
-      <p>This is just a test, clear all this shit out</p>
-      <img src={images(710, 600, false, 16)} alt="" />
-      <img src={images(710, 600, false, 12)} alt="" />
-      <img src={images(1420, 600, false, 49)} alt="" />
+      <Routes>
+        <Route path="/user/projects" />
+        <Route path="/user/bio" />
+        <Route path="/user/credentials" />
+        <Route path="/user" />
+        <Route path="/general" />
+        <Route path="/settings" />
+        <Route path="/voice" />
+        <Route path="/analytics" />
+      </Routes>
+      <Nav />
+      <SidePanel />
+      <DashBoard/>
+      <Footer/>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-
+  display: flex;
+  flex-direction: column;
   h1 {
     font-weight: 500;
     background-color: var(--secondary-color);

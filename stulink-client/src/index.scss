@@ -1,0 +1,31 @@
+:root {
+  --font-family: "Albert Sans", Inter, sans-serif;
+  --bg-color: #ffffff;
+  --secondary-color: #061320;
+  --primary-color: #76dcc3;
+  --theme-blue: #2335aa;
+  --theme-green: #289938;
+  --theme-gray: #e4e4e4;
+  --theme-red: #a40101;
+  --line-color: #C1C9CD;
+  --theme-orange: #EB6600;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Albert Sans", sans-serif;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+ul{
+  list-style-type: none;
+}
+
+hr{
+  color: var(--line-color);
+}

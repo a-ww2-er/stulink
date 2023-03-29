@@ -11,4 +11,4 @@ export const images = (
   `https://picsum.photos/${imageid ? `id/${imageid}` : ""}/${width}/${height}${
     diffentimage ? `?random=${diffentimage}` : ""
   }`;
-console.log(images(300, 200, 1));
+// console.log(images(300, 200, 1));

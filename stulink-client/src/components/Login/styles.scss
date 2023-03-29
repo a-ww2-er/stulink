@@ -1,0 +1,121 @@
+.form {
+  padding: 20% 18% 10%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  section {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    article {
+      span {
+        display: block;
+        width: 60px;
+        border-radius: 30px;
+        background-color: var(--primary-color);
+        height: 6px;
+      }
+      h1 {
+        color: var(--primary-color);
+        font-size: 26px;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        span {
+          display: flex;
+
+          align-items: center;
+          border: solid 1px grey;
+          border-radius: 5px;
+          height: 30px;
+          input {
+            height: 90%;
+            width: 100%;
+            border: none;
+
+            outline: none;
+          }
+          input:focus {
+            outline: none;
+            box-shadow: none;
+            border: none;
+          }
+        }
+      }
+    }
+    .remember_me {
+      display: flex;
+      justify-content: space-between;
+      p {
+        text-decoration: underline;
+      }
+    }
+    .login_btn {
+      display: flex;
+      justify-content: center;
+  border: none;
+      align-items: center;
+
+      background-color: var(--primary-color);
+      color: #fff;
+      width: 100%;
+      padding: 0.3rem 2.4rem;
+      border-radius: 5px;
+    }
+    .google_btn {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      align-items: center;
+      padding: 0.3rem 2.4rem;
+      border-radius: 6px;
+      border: solid 1px grey;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+    .or {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      span {
+        border-top: solid 1px grey;
+
+        width: 100%;
+      }
+    }
+  }
+}
+
+.login_navbar {
+  .navbar_container {
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      li {
+        img{
+            width: 180px;
+            height: 70px ;
+            object-fit: cover;
+        }
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}

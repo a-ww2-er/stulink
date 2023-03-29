@@ -1,14 +1,24 @@
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
-const Member = () => {
+type typeprop = {
+  image: string;
+  name: string;
+  dept: string;
+};
+
+const Member = ({ image, name, dept }: typeprop) => {
   return (
     <div className="member">
       <div>
-       <CgProfile/>
-        <h3>Janet Francis</h3>
+        <img src={image} alt={"profile photo"} />
+        <span >  <h3>{name}</h3> <p>{dept}</p></span>
       </div>
       <div>
-        <button className="member_department">Cyber</button> <button className="member_message">Message</button>
+       {" "}
+        <Link to={"#"} className="member_message">
+          Message
+        </Link>
       </div>
     </div>
   );

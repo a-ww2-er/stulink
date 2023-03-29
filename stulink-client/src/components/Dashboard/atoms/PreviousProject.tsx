@@ -1,23 +1,32 @@
 import { CgProfile } from "react-icons/cg";
+import { images } from "../../../images";
 
-const PreviousProject = () => {
+type typeprops={
+  number:string,
+  title:string,
+  date:string
+}
+
+const PreviousProject = ({number,title,date}:typeprops) => {
   return (
     <div className="previous_project">
-      <span>01</span>
+      <span>{number}</span>
       <div className="previous_project_details">
+        <section>
+        <img src={images(140,80,false,235)} alt="pfp" />
+        <img src={images(140,80,false,233)} alt="pfp" />
+        <img src={images(140,80,false,225)} alt="pfp" />
+        <img src={images(140,80,false,215)} alt="pfp" />
+      
+     
+        </section>
         <div>
-          <CgProfile />
-          <CgProfile />
-          <CgProfile />
-          <CgProfile />
-        </div>
-        <div>
-          <h3>Standards of Data Analysis</h3>
+          <h3>{title}</h3>
           <p>two departments co-up project</p>
         </div>
       </div>
 
-      <span>02/19/2022</span>
+      <span>{date}</span>
     </div>
   );
 };

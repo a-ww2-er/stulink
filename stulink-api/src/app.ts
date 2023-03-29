@@ -1,17 +1,20 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
 
 //import routes
-import dashboardRoute from "./routes/dashboardRoute";
+import authRoute from "../src/routes/auth.route";
 
 //configurations
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const app: express.Application = express();
+mongoose.set("strictQuery", true);
 
 //middlewares
 app.use(express.json());
+app.use(cors({ origin: "http://127.0.0.1:4000" }));
 
 //connect MongoDB
 const connectdb = async () => {
@@ -29,10 +32,10 @@ const connectdb = async () => {
 connectdb();
 
 //routes
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("hello world");
-});
-app.use("/dashboard", dashboardRoute);
+// app.get("/", (req: express.Request, res: express.Response) => {
+//   res.send("hello world");
+// });
+app.use("/api/auth", authRoute);
 
 //port
 app.listen(port, () => {

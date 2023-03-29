@@ -1,23 +1,25 @@
-import src from "../../../Assets/sunrise-1014712__340.jpg";
+import { Link } from "react-router-dom";
+import { images } from "../../../images";
+
 
 type NewsProps = {
   title?: string;
   date?: string;
   description?: string;
   url?: string;
-  image?: string;
+  image: number | boolean ;
   classname: string;
 };
-const News = ({ classname }: NewsProps) => {
+const News = ({ classname,image }: NewsProps) => {
   return (
-    <div>
-      <img src={src} alt={src} />
-      <h3>Mark Wesley returns</h3>
+    <Link to="#" className="news_link">
+      <img src={images(800,400,image)} alt="newsimg" />
+     <section> <h3>Mark Wesley returns</h3>
       <p>
         Read the epic story of an icon returning from the past to the future and
         to save a whole world from anniliation.
-      </p>
-    </div>
+      </p></section> 
+    </Link>
   );
 };
 

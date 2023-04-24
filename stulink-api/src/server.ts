@@ -1,10 +1,11 @@
 import express from "express";
+import path from "path";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 
 //import routes
-import authRoute from "../src/routes/auth.route";
+import authRoute from "./routes/auth.route";
 
 //configurations
 dotenv.config();
@@ -14,6 +15,7 @@ mongoose.set("strictQuery", true);
 
 //middlewares
 app.use(express.json());
+app.use(express.static(path.join(__dirname,'./stulink-client/dist')))
 app.use(cors({ origin: "http://127.0.0.1:4000" }));
 
 //connect MongoDB
@@ -36,6 +38,10 @@ connectdb();
 //   res.send("hello world");
 // });
 app.use("/api/auth", authRoute);
+app.get("*",(req,res)=>{
+  
+  res.sendFile(path.join(__dirname,"../../stulink-client/dist/index.html"))
+})
 
 //port
 app.listen(port, () => {

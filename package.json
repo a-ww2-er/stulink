@@ -1,0 +1,19 @@
+{
+  "name": "cloned-stulink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-ww2-er/stulink.git"
+  },
+  "author": "stulink devs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a-ww2-er/stulink/issues"
+  },
+  "homepage": "https://github.com/a-ww2-er/stulink/stulink-client/dist/index.html"
+}

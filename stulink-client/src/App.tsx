@@ -72,7 +72,7 @@ const App = () => {
     },
     {
       path: "/register",
-      element: <CredentialsPage />,
+      element: <Error404/>, // No Signup page yet, so it will just return the error 404 page, which I intend to style as well.
     },
     {
       path: "/login",

@@ -1,8 +1,7 @@
 import express from "express";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
 import cors from "cors";
-
+import mongoose from "mongoose";
+const dotenv = require("dotenv");
 //import routes
 import authRoute from "../src/routes/auth.route";
 
@@ -14,7 +13,7 @@ mongoose.set("strictQuery", true);
 
 //middlewares
 app.use(express.json());
-app.use(cors({ origin: "http://127.0.0.1:4000" }));
+app.use(cors());
 
 //connect MongoDB
 const connectdb = async () => {

@@ -26,7 +26,7 @@ const Form = () => {
     const { email, password } = values;
     console.log(email, password);
     try {
-      const res = await axios.post("https://stulink-api.onrender.com/api/auth/login", {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
         email,
         password,
       });
@@ -40,6 +40,7 @@ const Form = () => {
       setError(`Error: ${error.response}`);
     }
   };
+  
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validateOnBlur: true,

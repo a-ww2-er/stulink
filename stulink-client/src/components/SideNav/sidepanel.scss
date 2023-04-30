@@ -1,0 +1,54 @@
+.container {
+  background-color: var(--secondary-color);
+  height: 100vh;
+  width: 4.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  overflow: hidden;
+
+  svg {
+    width: 23px;
+    height: 45px;
+    color: #959595;
+  }
+  .active {
+    border: none;
+
+    padding: 0;
+    svg {
+      color: var(--primary-color);
+      border-left: solid 2.5px var(--primary-color);
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  ul {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    li {
+      margin: 6px 0;
+      img {
+        width: 100%;
+        object-fit: cover;
+        padding: 0 4% 0 0%;
+        margin:25px 0;
+      }
+    }
+  }
+  div {
+    padding: 0 5%;
+    img {
+      border-radius: 50%;
+      width: 55px;
+      object-fit: cover;
+      height: 55px;
+      border: solid 2px #2fb43d;
+      padding: 5%;
+    }
+  }
+}

@@ -15,7 +15,6 @@ mongoose.set("strictQuery", true);
 
 //middlewares
 app.use(express.json());
-app.use(express.static(path.join(__dirname,'./stulink-client/dist')))
 app.use(cors({ origin: "http://127.0.0.1:4000" }));
 
 //connect MongoDB
@@ -34,14 +33,10 @@ const connectdb = async () => {
 connectdb();
 
 //routes
-// app.get("/", (req: express.Request, res: express.Response) => {
-//   res.send("hello world");
-// });
+app.get("/", (req: express.Request, res: express.Response) => {
+  res.send("StuLink Api Up And Runnning");
+});
 app.use("/api/auth", authRoute);
-app.get("*",(req,res)=>{
-  
-  res.sendFile(path.join(__dirname,"../../stulink-client/dist/index.html"))
-})
 
 //port
 app.listen(port, () => {

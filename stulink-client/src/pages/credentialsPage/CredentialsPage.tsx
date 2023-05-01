@@ -3,6 +3,7 @@ import Documents from "../../components/Credentials/molecules/Documents";
 import NewsForYou from "../../components/Dashboard/molecules/NewsForYou";
 import ProjectHistory from "../../components/Dashboard/molecules/ProjectHistory";
 import "./credentialstyles.scss";
+import React from "react";
 const CredentialsPage = () => {
   return (
     <div className="credentials">

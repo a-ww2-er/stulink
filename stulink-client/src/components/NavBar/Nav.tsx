@@ -5,8 +5,12 @@ import { IoIosSearch } from "react-icons/io";
 import { GiSettingsKnobs } from "react-icons/gi";
 const Nav = () => {
   const notification = "22+";
-
-  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
+  let currentUser:any = {}
+  try {
+    currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
+  } catch (error) {
+    console.log(error);
+  }
 
   return (
     <nav className="nav">

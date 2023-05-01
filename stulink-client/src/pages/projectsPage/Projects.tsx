@@ -9,6 +9,7 @@ import Nav from "../../components/NavBar/Nav";
 import SidePanel from "../../components/SideNav/SidePanel";
 import { Link } from "react-router-dom";
 import { images } from "../../images";
+
 const Projects = () => {
   return (
     <>

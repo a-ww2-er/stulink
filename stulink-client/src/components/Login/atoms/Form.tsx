@@ -24,9 +24,9 @@ const Form = () => {
 
   const onSubmit = async (values: FormikValues) => {
     const { email, password } = values;
-    console.log(email, password);
+    // console.log(email, password);
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://stulink-api.onrender.com/api/auth/login", {
         email,
         password,
       });
@@ -37,7 +37,7 @@ const Form = () => {
       navigate(`/dashboard/${res.data._id}/projects`);
       // console.log(res.data.message, currentUser);
     } catch (error: any) {
-      setError(`Error: ${error.response}`);
+      setError(`Error: ${error.response.data}`);
     }
   };
   
@@ -48,7 +48,7 @@ const Form = () => {
     validationSchema: validationSchema,
   });
 
-  console.log("errors:", formik.errors);
+  // console.log("errors:", formik.errors);
   return (
     <div className="form">
       <section>

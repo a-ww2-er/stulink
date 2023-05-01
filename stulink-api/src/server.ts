@@ -15,7 +15,7 @@ mongoose.set("strictQuery", true);
 
 //middlewares
 app.use(express.json());
-app.use(cors({ origin: "http://127.0.0.1:4000" }));
+app.use(cors({ origin: "https://stulink.onrender.com" }));
 
 //connect MongoDB
 const connectdb = async () => {

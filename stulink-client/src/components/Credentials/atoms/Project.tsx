@@ -1,24 +1,19 @@
 type ProjectProps = {
   title: string;
+  img_url: string;
+  key: string
 };
 import { IoMdArrowForward } from "react-icons/io";
 import "../styles/credentials.scss";
-const Project = ({ title }: ProjectProps) => {
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+const Project = ({ title, img_url, key }: ProjectProps) => {
   return (
     <div className="project">
-      <div>
-        <img
-          src="https://fastly.picsum.photos/id/505/100/100.jpg?hmac=7ToFv6qETrqExA1jjSD7WQcSSIX3HI470eMKa2byx_g"
-          alt="Collaborators"
-        />
-        <img
-          src="https://fastly.picsum.photos/id/505/100/100.jpg?hmac=7ToFv6qETrqExA1jjSD7WQcSSIX3HI470eMKa2byx_g"
-          alt="Collaborators"
-        />
-        <img
-          src="https://fastly.picsum.photos/id/505/100/100.jpg?hmac=7ToFv6qETrqExA1jjSD7WQcSSIX3HI470eMKa2byx_g"
-          alt="Collaborators"
-        />
+      <div key={key}>
+        <LazyLoadImage src={img_url} alt="Active Project Image" />
+        <LazyLoadImage src={img_url} alt="Active Project Image" />
+        <LazyLoadImage src={img_url} alt="Active Project Image" />
         <span> +3</span>
       </div>
       <h2>{title}</h2>

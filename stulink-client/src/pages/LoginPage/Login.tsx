@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../../components/Login/atoms/Footer";
 import Form from "../../components/Login/atoms/Form";
 import Navbar from "../../components/Login/atoms/Navbar";

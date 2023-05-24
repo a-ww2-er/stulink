@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CiLock } from "react-icons/ci";
-import { AiOutlineUser, AiOutlineEye } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { VscEye } from "react-icons/vsc";
 import google from "../../../Assets/google.png";
 import "../styles.scss";
 import { FormikValues, useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 const validationSchema = yup.object({
   email: yup
@@ -22,6 +24,8 @@ const Form = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const authValues = useContext(AuthContext);
+  console.log(authValues);
   const onSubmit = async (values: FormikValues) => {
     const { email, password } = values;
     console.log(email, password);
@@ -33,14 +37,14 @@ const Form = () => {
       localStorage.setItem("currentUser", JSON.stringify(res.data));
 
       // const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
-
+      authValues?.setIsAuthenticated(true)
       navigate(`/dashboard/${res.data._id}/projects`);
       // console.log(res.data.message, currentUser);
     } catch (error: any) {
       setError(`Error: ${error.response}`);
     }
   };
-  
+
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validateOnBlur: true,
@@ -106,9 +110,7 @@ const Form = () => {
           </span>
           <p>forget Password</p>
         </span>
-        {/* <Link to={"#"}> */}
-
-        {/* </Link> */}
+           
         <span className="or">
           <span> </span> or <span></span>
         </span>

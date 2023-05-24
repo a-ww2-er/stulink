@@ -3,19 +3,17 @@ import { NavLink } from "react-router-dom";
 import { BsBell } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import { GiSettingsKnobs } from "react-icons/gi";
+import { useContext } from "react";
+import { MockUserData } from "../../context/MockData";
 const Nav = () => {
   const notification = "22+";
-
+  const mockData: any = useContext(MockUserData);
   const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
 
   return (
     <nav className="nav">
       <div className="nav_container">
-        <h2>
-          {currentUser.firstname
-            ? `${currentUser.firstname} ${currentUser.lastname} `
-            : "Joe Davidson"}
-        </h2>
+        <h2>{mockData.username ? `${mockData.FirstName} ${mockData.LastName}` : "Joe Davidson"}</h2>
         <ul>
           <li>
             <NavLink className="navlink" to={`/dashboard/${"123"}/projects`}>

@@ -5,14 +5,18 @@ import "./projects.scss";
 import NewsForYou from "../../components/Dashboard/molecules/NewsForYou";
 import ProjectHistory from "../../components/Dashboard/molecules/ProjectHistory";
 import Team from "../../components/Dashboard/molecules/Team";
-import Nav from "../../components/NavBar/Nav";
-import SidePanel from "../../components/SideNav/SidePanel";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { images } from "../../images";
+import { Helmet } from "react-helmet-async";
+
 const Projects = () => {
   return (
     <>
-      {/* <SidePanel /> */}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Projects</title>
+      </Helmet>
       <div className="dashboard_container">
         <div className="dashboard">
           <section>
@@ -26,7 +30,7 @@ const Projects = () => {
               <span>
                 <h2>Developing an App</h2> <p>~ Joe's Team (Team 3)</p>
               </span>
-              <img src={images(800, 400, false, 188)} alt={src} />
+              <LazyLoadImage src={images(800, 400, false, 188)} alt={src} />
               <article>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
                 reprehenderit, eligendi fugiat dolores tenetur explicabo iusto,
@@ -65,7 +69,7 @@ const Projects = () => {
         <NewsForYou />
       </div>
 
-      <Team/>
+      <Team />
       <ProjectHistory />
     </>
   );

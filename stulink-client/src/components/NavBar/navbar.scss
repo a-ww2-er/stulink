@@ -1,6 +1,9 @@
+.nav.openSideNav{
+  padding: 0 1% 0 17%;
+}
 .nav {
   margin: 0 auto;
-  padding: 0 2% 0 6%;
+  padding: 0 1% 0 8%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -16,8 +19,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.3rem 0 2rem;
-  background-color: #FFF;
+    padding: 0 1.5rem 0 1.3rem;
+    background-color: #FFF;
     h2 {
       font-weight: 300;
       text-transform: capitalize;
@@ -105,8 +108,10 @@
     text-align: center;
     justify-content: center;
     height: 100%;
-    border-bottom: solid 5px var(--primary-color);
+    border-bottom: solid 4px var(--primary-color);
     color: var(--primary-color);
     width: 100%;
+    margin-top: 4px;
+    font-weight: 400;
   }
 }

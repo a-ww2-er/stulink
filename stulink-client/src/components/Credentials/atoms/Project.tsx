@@ -2,10 +2,10 @@ type ProjectProps = {
   title: string;
 };
 import { IoMdArrowForward } from "react-icons/io";
-import "../styles/credentials.scss";
+import "../credentials.scss";
 const Project = ({ title }: ProjectProps) => {
   return (
-    <div className="project">
+    <div className="projects">
       <div>
         <img
           src="https://fastly.picsum.photos/id/505/100/100.jpg?hmac=7ToFv6qETrqExA1jjSD7WQcSSIX3HI470eMKa2byx_g"

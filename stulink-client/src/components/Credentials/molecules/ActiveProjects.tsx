@@ -1,5 +1,5 @@
 import Project from "./../atoms/Project";
-import "../styles/credentials.scss"
+import "../credentials.scss"
 const ActiveProjects = () => {
   return (
     <div className="active_projects">

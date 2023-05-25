@@ -1,6 +1,6 @@
 import { AiOutlineFilePdf } from "react-icons/ai";
 import { MdOutlineDelete } from "react-icons/md";
-import "../styles/credentials.scss";
+import "../credentials.scss";
 
 type DocumentProps = {
   status: string;

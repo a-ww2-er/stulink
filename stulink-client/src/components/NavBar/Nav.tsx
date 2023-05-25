@@ -3,13 +3,25 @@ import { NavLink } from "react-router-dom";
 import { BsBell } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import { GiSettingsKnobs } from "react-icons/gi";
+import { AppContext } from "../../utilities/context";
+import { useContext } from "react";
 const Nav = () => {
+  const { modalOpen, setModalOpen, setCloseSidePanel, closeSidePanel } =
+  useContext(AppContext);
   const notification = "22+";
-
-  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
-
+  let currentUser:any = {}
+  try {
+    currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
+  } catch (error) {
+    console.log(error);
+  }
+  
   return (
-    <nav className="nav">
+    <nav className={
+      closeSidePanel
+        ? "nav"
+        : `nav openSideNav`
+    }>
       <div className="nav_container">
         <h2>
           {currentUser.firstname
@@ -18,17 +30,17 @@ const Nav = () => {
         </h2>
         <ul>
           <li>
-            <NavLink className="navlink" to={`/dashboard/${"123"}/projects`}>
+            <NavLink className="navlink" to={`/dashboard/projects`}>
               Projects
             </NavLink>
           </li>
           <li>
-            <NavLink className="navlink" to={`/dashboard/${"123"}/bio`}>
+            <NavLink className="navlink" to={`/dashboard/bio`}>
               Bio
             </NavLink>
           </li>
           <li>
-            <NavLink className="navlink" to={`/dashboard/${"123"}/credentials`}>
+            <NavLink className="navlink" to={`/dashboard/credentials`}>
               Credentials
             </NavLink>
           </li>

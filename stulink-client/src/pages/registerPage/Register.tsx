@@ -1,22 +1,20 @@
 import React, { useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
-import Footer from "../../components/Login/atoms/Footer";
-import Form from "../../components/Login/atoms/Form";
-import Navbar from "../../components/Login/atoms/Navbar";
+import { motion, AnimatePresence } from "framer-motion";
+import Footer from "../../components/register/atoms/Footer";
+import Form from "../../components/register/atoms/Form";
+import Navbar from "../../components/register/atoms/Navbar";
 import PopupModal from "../../components/PopupModal/PopupModal";
 import { AppContext } from "../../utilities/context";
-import "./loginstyles.scss";
+import "./register.scss";
 import { useLocation } from "react-router-dom";
-
 const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
-
-const Login = () => {
+const Register = () => {
   const { modalOpen, setModalOpen, setCloseSidePanel, closeSidePanel } =
     useContext(AppContext);
   // const location = useLocation();
   return (
-    <div className="login">
+    <div className="register">
       {modalOpen && (
         <PopupModal
           isOpen={modalOpen}
@@ -36,7 +34,7 @@ const Login = () => {
           </section>
         </PopupModal>
       )}
-      <div className="login_container">
+      <div className="register_container">
         <section className="left">
           <Navbar onclick={() => setModalOpen(!modalOpen)} />
           <motion.article
@@ -46,8 +44,8 @@ const Login = () => {
             transition={transition}
             className="message"
           >
-            <h1>Login</h1>
-            <h3>Setting up RECAPTCHA and Remember me btn</h3>
+            <h1>Register</h1>
+            <h3>StuLink is a place for everyone</h3>
             <span>
               {" "}
               <p>Connect to a world of adventure </p>
@@ -72,4 +70,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

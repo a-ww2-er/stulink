@@ -11,21 +11,21 @@ const InfoSection = () => {
     <div className="info_section">
       <div className="info_section_container">
         <section className="right">
-          <img src={image1} alt="" />
-          <aside>
+          <img className="right_bg" src={image1} alt="" />
+        
             <span className="social_pill">
               <img src={instagram} alt="" />
-              Socials
+              <p>Socials</p>
             </span>
             <span className="social_pill">
               <img src={word} alt="" />
-              Work
+               <p>Work  </p> 
             </span>
             <span className="social_pill">
               <img src={schoolHat} alt="" />
-              School
+              <p> School</p> 
             </span>
-          </aside>
+          
         </section>
         <section className="left">
           <h2>

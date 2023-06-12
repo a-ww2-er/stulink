@@ -48,7 +48,7 @@ const Form = () => {
       console.log(res.data.message, currentUser);
     } catch (error: any) {
       setIsLoading(false);
-      setErrors(error?.response?.data ? error?.response?.data : error?.message);
+      setErrors(error?.response?.data ? (error?.response?.data.error ? error?.response?.data.error : error?.response?.data) : error?.message);
       console.log(error);
     }
   };

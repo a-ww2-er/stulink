@@ -1,6 +1,7 @@
 import { Key } from "react";
 import logo from "../Assets/stulink-logo-2.png";
 import { Link } from "react-router-dom";
+import { MotionValue } from "framer-motion";
 
 type NavbarTypes = {
   onclick: () => void;
@@ -11,13 +12,14 @@ type NavbarTypes = {
     link: String;
     icon?: JSX.Element | undefined;
   }[];
+  onscroll?: number;
 };
-const Navbar = ({ onclick, page, navBarLinks }: NavbarTypes) => {
+const Navbar = ({ onclick, page, navBarLinks, onscroll }: NavbarTypes) => {
   //ideally navBarLinks would be stored on our database but for now
   //lets leave it here
 
   return (
-    <nav className={`${page}_navbar`}>
+    <nav className={onscroll ? `${page}_sticky_navbar` : `${page}_navbar`}>
       <div className="navbar_container">
         <ul>
           <li>

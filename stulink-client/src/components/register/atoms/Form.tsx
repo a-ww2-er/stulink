@@ -731,10 +731,7 @@ const UploadForm = () => {
   const { error, setErrors, isLoading, setIsLoading } = useContext(AppContext);
   const navigate = useNavigate();
 
-  const submit = async (
-    values: FormikValues,
-    formikBag:any
-  ) => {
+  const submit = async (values: FormikValues, formikBag: any) => {
     formikBag.resetForm = false;
     const { email, password } = values;
     setIsLoading(true);
@@ -757,8 +754,10 @@ const UploadForm = () => {
       setIsLoading(false);
       setErrors(
         error?.response?.data
-          ? error?.response?.data.toString()
-          : error?.message.toString()
+          ? error?.response?.data.error
+            ? error?.response?.data.error
+            : error?.response?.data
+          : error?.message
       );
       console.log(error);
     }

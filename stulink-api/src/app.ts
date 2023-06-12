@@ -7,7 +7,6 @@ import errorHandler from "./middleware/errors";
 //Import routes
 import testRoute from "../src/routes/test";
 import authRoute from "../src/routes/auth.route";
-import { sendEmail } from "./utilities/sendEmail";
 
 
 //Configurations
@@ -26,8 +25,7 @@ app.use(cors());
 //Routes
 app.use("/api/auth", authRoute);
 app.use("/private",testRoute);
-async function main(){ await sendEmail({to:"warhistories101@gmail.com",subject:"tetsttstst",text:"<h1>tests12334<h1/>"})}
-main();
+
 //Error handling Middleware (must be called last)
 app.use(errorHandler);
 

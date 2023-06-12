@@ -2,10 +2,11 @@
 
   .container {
     padding: 2rem;
-    width: 20%;
+    width: -moz-fit-content;
+    width: fit-content;
     height: auto;
     background-color: white;
-    border-radius: 3%;
+    border-radius: 26px;
     svg {
       margin-right: 0;
       padding-right: 0;

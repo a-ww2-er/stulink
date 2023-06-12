@@ -6,7 +6,7 @@ import Form from "../../components/Login/atoms/Form";
 import PopupModal from "../../components/PopupModal/PopupModal";
 import { AppContext } from "../../utilities/context";
 import "./loginstyles.scss";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Navbar from "../../components/Navbar";
 
@@ -46,6 +46,11 @@ const Login = () => {
                 hello , welcome to stulink, this feature is UNAVAILIABLE at the
                 moment , try again later
               </section>
+              <span>
+                {" "}
+                <Link to="/dashboard/projects">dashboard</Link>{" "}
+                <Link to="/">homePage</Link>{" "}
+              </span>
             </section>
           </PopupModal>
         )}
@@ -64,7 +69,7 @@ const Login = () => {
               className="message"
             >
               <h1>Login</h1>
-              <h3>Setting up RECAPTCHA and Remember me btn</h3>
+              <h3>Gotta Set up RECAPTCHA and Remember me btn</h3>
               <span>
                 {" "}
                 <p>Connect to a world of adventure </p>

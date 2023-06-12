@@ -1,33 +1,48 @@
 .hero_section {
   width: 100%;
   height: 100%;
+  // min-width: -webkit-fill-available;
+  // min-width: -moz-fit-content;
+  // min-width: fit-content;
   background: var(--hero-section-image);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
-  border: none;
   position: relative;
   z-index: 1;
-
+  // .bg_image {
+  //   position: relative;
+  //   object-position: center;
+  //   object-fit: cover;
+  //   width: 100%;
+  //   z-index: -1;
+  // }
   &_container {
+    top: 0;
+    z-index: 2;
+    // position: absolute;
     padding: var(--home-page-padding);
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     text-align: center;
-    position: relative;
-    z-index: 1;
+    // position: relative;
+    .btn_1 {
+      position: absolute;
+      bottom: -4%;
+    }
+
     section {
-      margin: 8% 0 12% 0;
+      margin: 8% 0 15% 0;
       h2 {
         color: #fff;
         font-size: 3rem;
         font-weight: 700;
         text-transform: uppercase;
-        margin-bottom: 5px;
+        margin-bottom: 2%;
       }
       p {
         color: #fff;
@@ -46,8 +61,8 @@
   font-weight: 500;
   text-transform: uppercase;
   border: none;
-  border-radius: 25px;
-  margin-top: 20px;
+  border-radius: 26px;
+  margin-top: 5%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -72,16 +87,18 @@
   background: #1f1f1f;
   color: #fff;
 }
-.home_page_navbar {
-  width: 100%;
+%navbar_container {
   .navbar_container {
+  
     width: 100%;
     ul {
+      transition: all 0.3s;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       gap: 20px;
       li {
+        transition: all 0.3s;
         font-size: 0.9rem;
         font-weight: 400;
         cursor: pointer;
@@ -114,6 +131,7 @@
         }
       }
       .signin_btn {
+        transition: all 0.3s;
         white-space: nowrap;
 
         display: flex;
@@ -123,7 +141,71 @@
     }
   }
 }
+.home_page_navbar {
+  transition: ease 0.3s;
+  width: 100%;
+  @extend %navbar_container;
+}
+.home_page_sticky_navbar {
+  padding: var(--home-page-padding);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(17, 19, 18, 0.342);
+  transition: all 0.3s;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  @extend %navbar_container;
+  .navbar_container {
+    transition: ease-in-out 0.3s;
+    ul {
+      transition: ease-in-out 0.3s;
+      gap: 20px;
+      li {
+        transition: ease-in-out 0.3s;
+        font-size: 0.9rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        img {
+          width: 150px;
 
+          object-fit: cover;
+        }
+        a {
+   
+        }
+        a:hover {
+          color: var(--primary-color);
+        }
+      }
+
+      .support_btn {
+        margin-left: auto;
+        border: solid 1px white;
+        padding: 0.8% 1.6%;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+      .support_btn:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        a {
+          color: var(--primary-color);
+        }
+      }
+      .signin_btn {
+        transition: ease-in-out 0.3s;
+        white-space: nowrap;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
 .info_section {
   // position: relative;
   background-color: rgb(255, 255, 255);
@@ -132,59 +214,83 @@
     height: 100%;
     width: 100%;
     padding: var(--home-page-padding);
-    padding-top: 0;
-    display: flex;
+    // padding-top: 0;
+    // display: flex;
     align-items: center;
-    justify-content: right;
+    // justify-content: right;
+    gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
     //if we later get a problem with these position absolute
     //elements chnaging position on diffrent resolutiions
     //then we can use a scss mixin to define thier position
     //based on various variables like image size and screen size etc
     .right {
-      position: relative;
+      padding: 5% 5%;
+      // border: 1px green solid;
+      min-width: -webkit-fill-available;
+      min-width: -moz-fit-content;
+      min-width: fit-content;
       z-index: 1;
       margin-top: 0;
-      aside {
-        width: auto;
-        top: 20%;
-        left: 60%;
-        position: absolute;
+      position: relative;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .social_pill {
-          padding: 8px 22px;
-          gap: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          border: solid 1px var(--theme-gray);
-          border-radius: 25px;
-          background-color: #ffffff;
-          color: black;
-          font-weight: 300;
-          position: absolute;
-          img {
-            width: 36px;
-            object-fit: cover;
-          }
+      // .right > * :not(.right_bg){
+      //   position: absolute;
+      // }
+      // aside {
+      //   width: auto;
+      //   top: 20%;
+      //   left: 60%;
+      //   position: absolute;
+
+      //   display: flex;
+      //   flex-direction: column;
+      //   justify-content: space-between;
+      .right_bg {
+      }
+      .social_pill {
+        position: absolute;
+        padding: 2% 3%;
+        gap: 0%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 0.8fr 1fr;
+        border: solid 1px var(--theme-gray);
+        border-radius: 25px;
+        background-color: #ffffff;
+        color: black;
+        font-weight: 300;
+        P {
+          position: relative;
         }
-        .social_pill:nth-child(2) {
-          top: 200px;
-          right: 300px;
-        }
-        .social_pill:nth-child(3) {
-          top: 450px;
-         right:0
+        img {
+          max-width: 50%;
+          position: relative;
+          object-fit: cover;
         }
       }
 
+      .social_pill:nth-child(2) {
+        top: 20%;
+        right: 2rem;
+      }
+      .social_pill:nth-child(3) {
+        top: 55%;
+        left: 0;
+      }
+      .social_pill:nth-child(4) {
+        padding: 1% 1.5%;
+        bottom: 1%;
+        right: 20%;
+      }
+      // }
+
       img {
+        display: block;
         object-fit: cover;
-        position: relative;
-        width: 80%;
+        max-width: 80%;
       }
     }
     .left {
@@ -207,3 +313,9 @@
     }
   }
 }
+
+// @media screen and (max-width: 320px) {
+//   .info_section_container{
+//     grid-template-rows: 1fr 1fr;
+//   }
+// }

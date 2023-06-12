@@ -33,10 +33,6 @@ export const login = async (req, res, next) => {
     if (!isCorrect)
       return next(new ErrorResponse("Wrong Username or Password", 401));
 
-    // const { password, ...info } = user._doc;
-    // res.cookie("accessToken", token, {
-    //   httpOnly: true,
-    // })
     sendToken(user, 201, res);
   } catch (error) {
     console.log(error);

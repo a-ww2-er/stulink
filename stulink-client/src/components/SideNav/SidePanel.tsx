@@ -34,7 +34,7 @@ const SidePanel = () => {
   const handleLogout = async () => {
     try {
       await axiosRequest.post("/auth/logout");
-      localStorage.setItem("currentUser" , "");
+      localStorage.setItem("currentUser", "");
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -63,101 +63,104 @@ const SidePanel = () => {
     setCloseSidePanel(!closeSidePanel);
   }
   return (
-    <AnimatePresence initial={false}><motion.nav
-      variants={sidebarAnimation}
-      animate={closeSidePanel ? "open" : "closed"}
-      className={closeSidePanel ? "sideNav" : "closedSideNav"}
-    >
-      <div className="container">
-        <div>
-          <motion.section
-            animate={
-              !closeSidePanel
-                ? { x: 0, y: 0, rotate: 180 }
-                : { x: 0, y: 0, rotate: 0 }
-            }
-            transition={{ duration: 0.4 }}
-          >
-            <span onClick={handleClick}>{"<"}</span>
-          </motion.section>
-          <Link to={"/"} className="logo">
-           <img src={!closeSidePanel ? smallLogo : bigLogo} alt="" /> 
-            
-          </Link>
-          <article className="breadcrumbs">
-            {" "}
-            {pathname.replace("/", "").replace("/", " > ")}{" "}
-          </article>
-          <ul>
-            <li>
-              <NavLink to="/dashboard/bio" className="link">
-                <FaGlobeAmericas /> <p>Community</p>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={`/dashboard/projects`} className="link">
-                <IoMdPerson /> <p>Dashboard</p>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/biso" className="link">
-                <AiOutlineBarChart />
-                <p>Analytic</p>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/bio" className="link">
-                <FiSettings /> <p>Preferances</p>
-              </NavLink>
-            </li>
-            {!closeSidePanel ? (
+    <AnimatePresence initial={false}>
+      <motion.nav
+        variants={sidebarAnimation}
+        animate={closeSidePanel ? "open" : "closed"}
+        className={closeSidePanel ? "sideNav" : "closedSideNav"}
+      >
+        <div className="container">
+          <div>
+            <motion.section
+              animate={
+                !closeSidePanel
+                  ? { x: 0, y: 0, rotate: 180 }
+                  : { x: 0, y: 0, rotate: 0 }
+              }
+              transition={{ duration: 0.4 }}
+            >
+              <span onClick={handleClick}>{"<"}</span>
+            </motion.section>
+            <Link to={"/"} className="logo">
+              <img src={!closeSidePanel ? smallLogo : bigLogo} alt="" />
+            </Link>
+            <article className="breadcrumbs">
+              {" "}
+              {pathname.replace("/", "").replace("/", " > ")}{" "}
+            </article>
+            <ul>
               <li>
-                <NavLink to="/support" className="link">
-                  <TfiHeadphoneAlt />
+                <NavLink to="/dashboard/bio" className="link">
+                  <FaGlobeAmericas /> <p>Community</p>
                 </NavLink>
               </li>
-            ) : (
-              ""
-            )}
-          </ul>
+              <li>
+                <NavLink to={`/dashboard/projects`} className="link">
+                  <IoMdPerson /> <p>Dashboard</p>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/biso" className="link">
+                  <AiOutlineBarChart />
+                  <p>Analytic</p>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/bio" className="link">
+                  <FiSettings /> <p>Preferances</p>
+                </NavLink>
+              </li>
+              {!closeSidePanel ? (
+                <li>
+                  <NavLink to="/support" className="link">
+                    <TfiHeadphoneAlt />
+                  </NavLink>
+                </li>
+              ) : (
+                ""
+              )}
+            </ul>
 
-          <div className="support">
-            <div>
-              <p>need help?</p>
-              <span className="link">
-                contact Support <TfiHeadphoneAlt />
-              </span>
+            <div className="support">
+              <div>
+                <p>need help?</p>
+                <span className="link">
+                  contact Support <TfiHeadphoneAlt />
+                </span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <section>
-          <img src={pfp} alt="" />
-          <p className="user_name">
-            {currentUser.userName
-              ? `${currentUser.firstName} ${currentUser.lastName}`
-              : "Joe Davidson"}
-          </p>
-          <p className="email">
-            <p>
-              {" "}
-              { currentUser.email
-                ? `${currentUser.email}`
-                : "JoeDavidson@gmail.com"}
+          <section>
+            <img
+              src={currentUser.profilePhoto ? currentUser.profilePhoto : pfp}
+              alt=""
+            />
+            <p className="user_name">
+              {currentUser.userName
+                ? `${currentUser.firstName} ${currentUser.lastName}`
+                : "Joe Davidson"}
             </p>
-          </p>
-        </section>
-        <section className="log_out">
-          <ul>
-            <li className="link" onClick={handleLogout}>
-              <BiArrowBack />
-              <p>Logout</p>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </motion.nav></AnimatePresence>
-    
+            <p className="email">
+              <p>
+                {" "}
+                {currentUser.email
+                  ? `${currentUser.email}`
+                  : "JoeDavidson@gmail.com"}
+              </p>
+            </p>
+          </section>
+          <section className="log_out">
+            <ul>
+              <li className="link" onClick={handleLogout}>
+                <BiArrowBack />
+                <p>Logout</p>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </motion.nav>
+    </AnimatePresence>
   );
 };
 

@@ -28,7 +28,6 @@ import {
 } from "./utilities/context/AuthContext";
 import { HelmetProvider } from "react-helmet-async";
 import Scrollbar from "smooth-scrollbar";
-import Test from "./components/test";
 
 const App = () => {
   const { modalOpen, setModalOpen, setCloseSidePanel, closeSidePanel } =

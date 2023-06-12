@@ -41,7 +41,7 @@ const Form = () => {
       });
       setIsLoading(false);
       setErrors("");
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      localStorage.setItem("currentUser", JSON.stringify(res.data.user));
       const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
       // authValues?.setIsAuthenticated(true)
       navigate(`/dashboard/projects`);

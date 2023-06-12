@@ -8,7 +8,6 @@ import errorHandler from "./middleware/errors";
 import testRoute from "../src/routes/test";
 import authRoute from "../src/routes/auth.route";
 
-
 //Configurations
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -20,15 +19,14 @@ connectdb();
 //Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 //Routes
 app.use("/api/auth", authRoute);
-app.use("/private",testRoute);
+app.use("/private", testRoute);
 
 //Error handling Middleware (must be called last)
 app.use(errorHandler);
-
 
 //Server Port with extra error handling
 const server = app.listen(port, () => {

@@ -1,0 +1,209 @@
+.hero_section {
+  width: 100%;
+  height: 100%;
+  background: var(--hero-section-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  position: relative;
+  z-index: 1;
+
+  &_container {
+    padding: var(--home-page-padding);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    section {
+      margin: 8% 0 12% 0;
+      h2 {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      p {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-top: 2%;
+      }
+    }
+  }
+}
+.btn_1 {
+  padding: 1.3% 3%;
+  background: var(--primary-color);
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn_1:hover {
+  background: #1f1f1f;
+  color: #fff;
+}
+.btn_2 {
+  padding: 3% 5%;
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn_2:hover {
+  background: #1f1f1f;
+  color: #fff;
+}
+.home_page_navbar {
+  width: 100%;
+  .navbar_container {
+    width: 100%;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      li {
+        font-size: 0.9rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        img {
+          width: 150px;
+
+          object-fit: cover;
+        }
+        a {
+          color: white;
+        }
+        a:hover {
+          color: var(--primary-color);
+        }
+      }
+
+      .support_btn {
+        margin-left: auto;
+        border: solid 1px white;
+        padding: 0.8% 1.6%;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+      .support_btn:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        a {
+          color: var(--primary-color);
+        }
+      }
+      .signin_btn {
+        white-space: nowrap;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
+
+.info_section {
+  // position: relative;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
+  &_container {
+    height: 100%;
+    width: 100%;
+    padding: var(--home-page-padding);
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    //if we later get a problem with these position absolute
+    //elements chnaging position on diffrent resolutiions
+    //then we can use a scss mixin to define thier position
+    //based on various variables like image size and screen size etc
+    .right {
+      position: relative;
+      z-index: 1;
+      margin-top: 0;
+      aside {
+        width: auto;
+        top: 20%;
+        left: 60%;
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .social_pill {
+          padding: 8px 22px;
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border: solid 1px var(--theme-gray);
+          border-radius: 25px;
+          background-color: #ffffff;
+          color: black;
+          font-weight: 300;
+          position: absolute;
+          img {
+            width: 36px;
+            object-fit: cover;
+          }
+        }
+        .social_pill:nth-child(2) {
+          top: 200px;
+          right: 300px;
+        }
+        .social_pill:nth-child(3) {
+          top: 450px;
+         right:0
+        }
+      }
+
+      img {
+        object-fit: cover;
+        position: relative;
+        width: 80%;
+      }
+    }
+    .left {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20%;
+      h2 {
+        text-transform: capitalize;
+        font-size: 4rem;
+        span {
+          color: var(--primary-color);
+        }
+      }
+      p {
+        font-weight: 200;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

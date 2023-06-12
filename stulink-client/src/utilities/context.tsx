@@ -14,8 +14,10 @@ type AppStatesTypes = {
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setCloseSidePanel: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedUser: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setFormIndex: React.Dispatch<React.SetStateAction<number>>;
   selectedUser: string | undefined;
-  errors: string;
+  error: string;
+  formIndex: number;
   setErrors: React.Dispatch<React.SetStateAction<string>>;
   wrapperElement: HTMLDivElement | HTMLElement | null | undefined;
   setWrapperElement: React.Dispatch<
@@ -30,8 +32,9 @@ const AppContextProvider = ({ children }: AppContextProviderProp) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [modalOpen, setModalOpen] = useState<boolean>(true);
   const [closeSidePanel, setCloseSidePanel] = useState<boolean>(false);
-  const [errors, setErrors] = useState<string>("");
+  const [error, setErrors] = useState<string>("");
   const [selectedUser, setSelectedUser] = useState<string | undefined>("");
+  const [ formIndex, setFormIndex] = useState<number>(0);
   const [wrapperElement, setWrapperElement] = useState<
     HTMLElement | HTMLDivElement | null | undefined
   >();
@@ -51,8 +54,9 @@ const AppContextProvider = ({ children }: AppContextProviderProp) => {
         setIsLoading,
         selectedUser,
         setSelectedUser,
-        errors,
+        error,
         setErrors,
+        formIndex, setFormIndex
       }}
     >
       {children}

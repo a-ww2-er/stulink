@@ -5,7 +5,7 @@ import { IoIosSearch } from "react-icons/io";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { AppContext } from "../../utilities/context";
 import { useContext } from "react";
-import { MockUserData } from "../../context/MockData";
+import { MockUserData } from "../../utilities/context/MockData";
 const Nav = () => {
   const { modalOpen, setModalOpen, setCloseSidePanel, closeSidePanel } =
   useContext(AppContext);
@@ -20,12 +20,14 @@ const Nav = () => {
   const mockData: any = useContext(MockUserData);
   return (
     <nav className={
-      closeSidePanel
+      !closeSidePanel
         ? "nav"
         : `nav openSideNav`
     }>
       <div className="nav_container">
-        <h2>{mockData.username ? `${mockData.FirstName} ${mockData.LastName}` : "Joe Davidson"}</h2>
+        <h2> {currentUser.userName
+              ? `${currentUser.firstName} ${currentUser.lastName}`
+              : "Joe Davidson"}</h2>
         <ul>
           <li>
             <NavLink className="navlink" to={`/dashboard/projects`}>

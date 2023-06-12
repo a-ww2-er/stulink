@@ -17,8 +17,8 @@ import { Helmet } from "react-helmet-async";
 const Projects = () => {
   const { modalOpen, setModalOpen, setCloseSidePanel, closeSidePanel } =
     useContext(AppContext);
-  return (
-    <>
+  return(
+    <div>
       {modalOpen && (
         <PopupModal
           isOpen={modalOpen}
@@ -41,11 +41,11 @@ const Projects = () => {
       {/* <SidePanel /> */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Projects</title>
+        <title>Projects - StuLink</title>
       </Helmet>
       <div
         className={
-          closeSidePanel
+          !closeSidePanel
             ? "dashboard_container"
             : `dashboard_container openSideNav`
         }
@@ -97,6 +97,7 @@ const Projects = () => {
                   eum quae doloremque magni eveniet a repudiandae placeat dicta.
                 </article>
               </div>
+              </div>
             <article
               className="edit_icons"
               onClick={() => setModalOpen(!modalOpen)}
@@ -111,8 +112,8 @@ const Projects = () => {
         <Team />
         <ProjectHistory />
       </div>
+
  </div>
- </>
   );
 };
 

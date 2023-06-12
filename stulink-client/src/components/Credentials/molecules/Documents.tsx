@@ -1,6 +1,6 @@
 import Document from "../atoms/Document";
 import { useContext } from "react";
-import { MockUserData } from "../../../context/MockData";
+import { MockUserData } from "../../../utilities/context/MockData";
 
 const Documents = () => {
   const mockData: any = useContext(MockUserData);

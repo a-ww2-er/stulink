@@ -12,7 +12,7 @@ const Bio = () => {
     <div className="bio">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Bio</title>
+        <title>Bio - StuLink</title>
       </Helmet>
       <section className="profile_container">
         <Profile />

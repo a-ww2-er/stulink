@@ -10,7 +10,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { AppContext } from "../../../utilities/context";
 import LoadingBar from "../../LoadingBar/LoadingBar";
-import { AuthContext } from "../../../context/AuthContext";
+import { AuthContext } from "../../../utilities/context/AuthContext";
 
 const validationSchema = yup.object({
   email: yup
@@ -22,31 +22,30 @@ const validationSchema = yup.object({
 });
 
 const Form = () => {
-  const { errors, setErrors } = useContext(AppContext);
+  const { error, setErrors } = useContext(AppContext);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const authValues = useContext(AuthContext);
-  console.log(authValues);
+  // const authValues = useContext(AuthContext);
+  // console.log(authValues);
   const onSubmit = async (values: FormikValues) => {
     const { email, password } = values;
+    console.log(values);
 
     try {
       setIsLoading(true);
       const res = await axios.post("http://localhost:5000/api/auth/login", {
-        email,
-        // username:email,
-        password,
+        ...values,
+        username: email,
       });
       setIsLoading(false);
       setErrors("");
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-
-      // const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
-      authValues?.setIsAuthenticated(true)
+      const currentUser = JSON.parse(localStorage.getItem("currentUser") || "");
+      // authValues?.setIsAuthenticated(true)
       navigate(`/dashboard/projects`);
-      // console.log(res.data.message, currentUser);
+      console.log(res.data.message, currentUser);
     } catch (error: any) {
       setIsLoading(false);
       setErrors(error?.response?.data ? error?.response?.data : error?.message);
@@ -72,8 +71,8 @@ const Form = () => {
           <form onSubmit={formik.handleSubmit}>
             <div>
               {" "}
-              {errors && (
-                <article className="form_validation_errors">{errors}</article>
+              {error && (
+                <article className="form_validation_errors">{error}</article>
               )}
               <label htmlFor="email">Email or UserName</label>
               {formik.touched.email && formik.errors.email ? (
@@ -85,7 +84,7 @@ const Form = () => {
               )}
               <span
                 className={
-                  (formik.errors.email && formik.touched.email) || errors
+                  (formik.errors.email && formik.touched.email) || error
                     ? "error_input"
                     : ""
                 }
@@ -114,7 +113,7 @@ const Form = () => {
               )}
               <span
                 className={
-                  (formik.errors.password && formik.touched.password) || errors
+                  (formik.errors.password && formik.touched.password) || error
                     ? "error_input"
                     : ""
                 }

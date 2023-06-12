@@ -1,7 +1,7 @@
 import Project from "./../atoms/Project";
-import "../styles/credentials.scss";
+import "../credentials.scss";
 import { useContext } from "react";
-import { MockUserData } from "../../../context/MockData";
+import { MockUserData } from "../../../utilities/context/MockData";
 const ActiveProjects = () => {
   const mockData: any = useContext(MockUserData);
   return (

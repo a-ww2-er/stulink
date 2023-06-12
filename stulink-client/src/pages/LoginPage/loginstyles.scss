@@ -45,4 +45,31 @@
       width: 50%;
     }
   }
+  .authentication_page_navbar {
+    .navbar_container {
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        li {
+          font-size: 0.9rem;
+          font-weight: 400;
+          img {
+            width: 150px;
+
+            object-fit: cover;
+          }
+          a {
+            color: white;
+          }
+        }
+        .support_btn {
+          border: solid 1px white;
+          padding: 0.8% 1.6%;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
 }

@@ -22,6 +22,10 @@ app.use(cookieParser());
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 //Routes
+
+app.get("/", (req: express.Request, res: express.Response) => {
+  res.send("StuLink Api Up And Runnning");
+});
 app.use("/api/auth", authRoute);
 app.use("/private", testRoute);
 

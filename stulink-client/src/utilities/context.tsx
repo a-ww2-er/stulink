@@ -30,7 +30,7 @@ const AppContext = createContext({} as AppStatesTypes);
 const AppContextProvider = ({ children }: AppContextProviderProp) => {
   //declare states here
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [modalOpen, setModalOpen] = useState<boolean>(true);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [closeSidePanel, setCloseSidePanel] = useState<boolean>(false);
   const [error, setErrors] = useState<string>("");
   const [selectedUser, setSelectedUser] = useState<string | undefined>("");

@@ -2,17 +2,18 @@ import { AiOutlineShareAlt } from "react-icons/ai";
 import { BiEdit } from "react-icons/bi";
 import src from "../../Assets/PM.jpg";
 import "./projects.scss";
-import NewsForYou from "../../components/Dashboard/molecules/NewsForYou";
-import ProjectHistory from "../../components/Dashboard/molecules/ProjectHistory";
-import Team from "../../components/Dashboard/molecules/Team";
-import Nav from "../../components/NavBar/Nav";
-import SidePanel from "../../components/SideNav/SidePanel";
+import NewsForYou from "../../components/Projects/molecules/NewsForYou";
+import ProjectHistory from "../../components/Projects/molecules/ProjectHistory";
+import Team from "../../components/Projects/molecules/Team";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { images } from "../../images";
 import PopupModal from "../../components/PopupModal/PopupModal";
 import { useContext } from "react";
 import { AppContext } from "../../utilities/context";
 import { IoClose } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
+
 const Projects = () => {
   const { modalOpen, setModalOpen, setCloseSidePanel, closeSidePanel } =
     useContext(AppContext);
@@ -38,6 +39,10 @@ const Projects = () => {
         </PopupModal>
       )}
       {/* <SidePanel /> */}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Projects</title>
+      </Helmet>
       <div
         className={
           closeSidePanel
@@ -92,7 +97,6 @@ const Projects = () => {
                   eum quae doloremque magni eveniet a repudiandae placeat dicta.
                 </article>
               </div>
-            </div>
             <article
               className="edit_icons"
               onClick={() => setModalOpen(!modalOpen)}
@@ -104,11 +108,11 @@ const Projects = () => {
 
           <NewsForYou />
         </div>
-
         <Team />
         <ProjectHistory />
       </div>
-    </>
+ </div>
+ </>
   );
 };
 

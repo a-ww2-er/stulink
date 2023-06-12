@@ -1,15 +1,18 @@
-import { CgProfile } from "react-icons/cg";
 import { FiEdit } from "react-icons/fi";
+import { useContext } from "react";
+import { MockUserData } from "../../../context/MockData";
 const Profile = () => {
+  const mockData: any = useContext(MockUserData);
+  
   return (
     <div className="profile">
       <div className="profile_picture">
-        <CgProfile />
+        <img src={mockData.ProfilePhoto} alt="User profile image" />
       </div>
       <span className="profile_name">
-        <p>Joey 2002</p> <FiEdit />
+        <p>{` ${mockData.FirstName} 2002`} </p> <FiEdit />
       </span>
-      <p>JoeDavidson@yahoo.uk</p>
+      <p>{`${mockData.Email}`}</p>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit deleniti
         accusamus, ducimus tempore voluptates deserunt quisquam corrupti? Ab,

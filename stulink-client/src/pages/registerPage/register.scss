@@ -1,0 +1,48 @@
+.register {
+  background-color: white;
+  overflow: hidden;
+  // z-index: 3;
+  // position: relative;
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+
+    .left {
+      z-index: 1;
+      color: white;
+      height: 100%;
+      width: 100%;
+      padding-left: 2.5%;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../Assets/login-left.png") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .message {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        h1 {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+        h3 {
+          font-weight: 400;
+          font-size: 1.7rem;
+          text-transform: capitalize;
+        }
+        p {
+          width: 40%;
+          font-weight: 300;
+          font-size: 1rem;
+        }
+      }
+    }
+    .right {
+      overflow: hidden;
+      position: relative;
+      width: 50%;
+    }
+  }
+}

@@ -4,10 +4,16 @@ import PersonalData from "../../components/Bio/molecules/PersonalData";
 import Profile from "../../components/Bio/molecules/Profile";
 import SchoolDetails from "../../components/Bio/molecules/SchoolDetails";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import './biopage.scss'
+import "./biopage.scss";
+import { Helmet } from "react-helmet-async";
+
 const Bio = () => {
   return (
     <div className="bio">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Bio - StuLink</title>
+      </Helmet>
       <section className="profile_container">
         <Profile />
         <button>Save Changes</button>
@@ -26,7 +32,6 @@ const Bio = () => {
         <h1>School Details</h1>
         <SchoolDetails />
       </section>
-      
       <section>
         <h1>
           Change Password <AiOutlineInfoCircle />{" "}

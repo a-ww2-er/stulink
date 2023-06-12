@@ -14,7 +14,6 @@
   }
 }
 
-
 .profile {
   display: flex;
   flex-direction: column;
@@ -23,10 +22,10 @@
   margin: 0 auto;
 
   &_picture {
-    border-radius: 50%;
-    svg {
-      width: 40px;
-      height: 40px;
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
     }
   }
 
@@ -57,8 +56,6 @@
   }
 }
 
-
-
 .occupational_details {
   display: flex;
   justify-content: center;
@@ -71,17 +68,17 @@
   }
 }
 
-.school_details{
+.school_details {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.change_password{
+.change_password {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  button{
+  button {
     width: 150px;
     height: 50px;
     border: solid 2px var(--theme-red);
@@ -90,29 +87,29 @@
     border-radius: 10px;
     font-size: 15px;
   }
-  div{
+  div {
     display: flex;
     flex-direction: column;
     font-weight: bold;
   }
 }
 
-.delete_button{
-    width: 200px;
-    height: 50px;
-    color: var(--bg-color);
-    background-color: var(--theme-red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    gap: 5px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-size: 15px;
-    margin: 55px;
+.delete_button {
+  width: 200px;
+  height: 50px;
+  color: var(--bg-color);
+  background-color: var(--theme-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  gap: 5px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 55px;
 }
 
-button{
+button {
   cursor: pointer;
 }

@@ -1,0 +1,49 @@
+.loading_bar_backdrop {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(80, 80, 80, 0.356);
+    z-index: 2;
+    .loading_bar {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0%;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--theme-blue);
+      z-index: 2;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: loading-animation 1.5s infinite alternate;
+  
+      @keyframes loading-animation {
+        0% {
+          transform: translateX(0) scaleX(0);
+          transform-origin: left;
+          left: 0;
+          right: auto;
+        }
+        45% {
+          transform: translateX(0) scaleX(1);
+          transform-origin: left;
+          left: 0;
+          right: auto;
+        }
+        50% {
+          transform: translateX(0) scaleX(1);
+          transform-origin: right;
+          right: 0;
+          left: auto;
+        }
+        100% {
+          transform: translateX(0) scaleX(0);
+          transform-origin: right;
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }

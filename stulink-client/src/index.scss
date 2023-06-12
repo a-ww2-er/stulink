@@ -1,14 +1,16 @@
 :root {
   --font-family: "Albert Sans", Inter, sans-serif;
   --bg-color: #ffffff;
-  --secondary-color: #11202E;
+  --secondary-color: #11202e;
   --primary-color: #76dcc3;
   --theme-blue: #2335aa;
   --theme-green: #289938;
   --theme-gray: #e4e4e4;
   --theme-red: #a40101;
-  --line-color: #C1C9CD;
-  --theme-orange: #EB6600;
+  --line-color: #c1c9cd;
+  --theme-orange: #eb6600;
+  --hero-section-image: url("./Assets/hero-section.png");
+  --home-page-padding: 1% 3% 0;
 }
 * {
   margin: 0;
@@ -17,16 +19,40 @@
 }
 body {
   font-family: "Albert Sans", sans-serif;
-
 }
 a {
   color: black;
   text-decoration: none;
 }
-ul{
+ul {
   list-style-type: none;
 }
 
-hr{
+hr {
   color: var(--line-color);
+}
+.modal {
+  position: fixed;
+  z-index: 6;
+}
+
+::-webkit-scrollbar {
+
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #868892;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #42455c;
+  border: 0;
+  transition: all 0.3s;
 }

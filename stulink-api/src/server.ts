@@ -1,44 +1,38 @@
 import express from "express";
-import path from "path";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
+import { connectdb } from "./config/db";
+import cookieParser from "cookie-parser";
+import errorHandler from "./middleware/errors";
+//Import routes
+import testRoute from "../src/routes/test";
+import authRoute from "../src/routes/auth.route";
 
-//import routes
-import authRoute from "./routes/auth.route";
-
-//configurations
+//Configurations
 dotenv.config();
 const port = process.env.PORT || 5000;
 const app: express.Application = express();
-mongoose.set("strictQuery", true);
 
-//middlewares
-app.use(express.json());
-app.use(cors({ origin: "https://stulink.onrender.com" }));
-
-//connect MongoDB
-const connectdb = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
-    console.log(`Connected to MongoDB :${conn.connection.host}`);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
+//Connect MongoDB
 connectdb();
 
-//routes
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("StuLink Api Up And Runnning");
-});
-app.use("/api/auth", authRoute);
+//Middlewares
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
-//port
-app.listen(port, () => {
+//Routes
+app.use("/api/auth", authRoute);
+app.use("/private", testRoute);
+
+//Error handling Middleware (must be called last)
+app.use(errorHandler);
+
+//Server Port with extra error handling
+const server = app.listen(port, () => {
   console.log(`server running on port ${port}`);
+});
+process.on("unhandledRejection", (error, promise) => {
+  console.log(`Logged Error ${error}`);
+  server.close(() => process.exit(1));
 });

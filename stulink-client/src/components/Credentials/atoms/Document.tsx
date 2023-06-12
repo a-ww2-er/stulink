@@ -1,6 +1,6 @@
-import { AiOutlineFilePdf } from "react-icons/ai";
 import { MdOutlineDelete } from "react-icons/md";
-import "../styles/credentials.scss";
+import "../credentials.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type DocumentProps = {
   status: string;
@@ -12,12 +12,12 @@ const Document = ({ status, title, date }: DocumentProps) => {
   return (
     <div className="document">
       <div>
-        <AiOutlineFilePdf />
+        <LazyLoadImage src={img_url} alt={img_url} />
         <span>
           <h3>{title}</h3>
           <span>{date}</span>
         </span>
-        <span className="document_status" >{status}</span>
+        <span className="document_status">{status}</span>
       </div>
 
       <button>

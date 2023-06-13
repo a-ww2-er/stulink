@@ -5,7 +5,6 @@ import { connectdb } from "./config/db";
 import cookieParser from "cookie-parser";
 import errorHandler from "./middleware/errors";
 //Import routes
-import testRoute from "../src/routes/test";
 import authRoute from "../src/routes/auth.route";
 
 //Configurations

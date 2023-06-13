@@ -1,5 +1,6 @@
 import { MdArrowDropDown } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Cards from "../../components/Home/atoms/Cards";
 import HeroSection from "../../components/Home/HeroSection";
 import InfoSection from "../../components/Home/InfoSection";
 import MockForm from "../MockForm";

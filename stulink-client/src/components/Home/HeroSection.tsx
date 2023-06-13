@@ -70,7 +70,8 @@ const HeroSection = ({ navBarLinks }: NavBarLinks) => {
             transition={bounceTransition(2.0, 0.6, 0)}
           >
             Reach your dreams faster. Make the journey easier <br /> you're only
-            one click away!
+            one click away! <br/>
+            {"(Still under HEAVY development)"}
           </motion.p>
         </section>
         {/* change this to take user to the explore page */}

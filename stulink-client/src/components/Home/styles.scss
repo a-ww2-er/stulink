@@ -1,3 +1,37 @@
+.cardss {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  gap: 10px;
+  div {
+    background-color: red;
+  }
+  .project {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .post {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .news {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+// div {
+//   width: 250px;
+//   height: 150px;
+//   background-color: red;
+// }
+// div:first-child {
+//   width: 150px;
+//   height: 150px;
+//   background-color: red;
+// }
+
 .hero_section {
   width: 100%;
   height: 100%;
@@ -89,7 +123,6 @@
 }
 %navbar_container {
   .navbar_container {
-  
     width: 100%;
     ul {
       transition: all 0.3s;
@@ -174,7 +207,6 @@
           object-fit: cover;
         }
         a {
-   
         }
         a:hover {
           color: var(--primary-color);

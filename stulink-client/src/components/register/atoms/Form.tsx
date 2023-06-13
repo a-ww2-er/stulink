@@ -54,18 +54,18 @@ export const DropdownPlaceholder = (item: dropdownPlaceholder) => {
 };
 
 //creating a reuseable yup method to validate with multiple schemas
-yup.addMethod<yup.MixedSchema>(
-  yup.MixedSchema,
-  "oneOfSchema",
-  function (schemas: yup.AnySchema[]) {
-    return this.test(
-      "one-of-schemas",
-      "Please ensure this field is filled correctly",
-      (item: any) =>
-        schemas.some((schema) => schema.isValidSync(item, { strict: true }))
-    );
-  }
-);
+// yup.addMethod<yup.MixedSchema>(
+//   yup.MixedSchema,
+//   "oneOfSchema",
+//   function (schemas: yup.AnySchema[]) {
+//     return this.test(
+//       "one-of-schemas",
+//       "Please ensure this field is filled correctly",
+//       (item: any) =>
+//         schemas.some((schema) => schema.isValidSync(item, { strict: true }))
+//     );
+//   }
+// );
 
 //yup validation schema for formik
 const validationSchema = yup.object({
@@ -101,32 +101,31 @@ const validationSchema = yup.object({
       "Please fill in a valid Mobile number"
     )
     .required("This field is required"),
-  country: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
+  country: yup.mixed().required("This field is required"),
+  // .oneOfSchema([
+  //   yup
+  //     .object()
+  //     .shape({
+  //       label: yup.string().required(),
+  //       value: yup.string().required(),
+  //     })
+  //     .nullable()
+  //     .required("This field is required"),
+  // ])
+
   dateOfBirth: yup.string().required("Date is required"),
   gender: yup
     .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
+    // .oneOfSchema([
+    //   yup
+    //     .object()
+    //     .shape({
+    //       label: yup.string().required(),
+    //       value: yup.string().required(),
+    //     })
+    //     .nullable()
+    //     .required("This field is required"),
+    // ])
     .required("This field is required"),
   schoolId: yup
     .string()
@@ -135,42 +134,42 @@ const validationSchema = yup.object({
     .max(6, "6 digit code"),
   schoolCountry: yup
     .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
+    // .oneOfSchema([
+    //   yup
+    //     .object()
+    //     .shape({
+    //       label: yup.string().required(),
+    //       value: yup.string().required(),
+    //     })
+    //     .nullable()
+    //     .required("This field is required"),
+    // ])
     .required("This field is required"),
   faculty: yup
     .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
+    // .oneOfSchema([
+    //   yup
+    //     .object()
+    //     .shape({
+    //       label: yup.string().required(),
+    //       value: yup.string().required(),
+    //     })
+    //     .nullable()
+    //     .required("This field is required"),
+    // ])
     .required("This field is required"),
   department: yup
     .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
+    // .oneOfSchema([
+    //   yup
+    //     .object()
+    //     .shape({
+    //       label: yup.string().required(),
+    //       value: yup.string().required(),
+    //     })
+    //     .nullable()
+    //     .required("This field is required"),
+    // ])
     .required("This field is required"),
   student: yup.boolean().required("This field is required"),
   staff: yup.boolean().required("This field is required"),
@@ -197,16 +196,16 @@ const validationSchema = yup.object({
     .required("This field is required"),
   occupationStatus: yup
     .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
+    // .oneOfSchema([
+    //   yup
+    //     .object()
+    //     .shape({
+    //       label: yup.string().required(),
+    //       value: yup.string().required(),
+    //     })
+    //     .nullable()
+    //     .required("This field is required"),
+    // ])
     .required("This field is required"),
   userName: yup
     .string()
@@ -281,7 +280,7 @@ const Form = (props: {
   let prevFormIndex: null | number = tupl[0];
   let direction = formIndex > prevFormIndex ? 1 : -1;
 
-  const profilePhotoRef = useRef(null);
+  const profilePhotoRef = useRef<null | any>(null);
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
 
@@ -569,7 +568,7 @@ const Form = (props: {
                                   <aside
                                     onClick={() => {
                                       profilePhotoRef.current !== null &&
-                                        profilePhotoRef.current.click();
+                                        profilePhotoRef?.current?.click();
                                     }}
                                     className="photo_container"
                                   >

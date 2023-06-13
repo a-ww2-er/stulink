@@ -13,7 +13,7 @@ const Documents = () => {
         return credential.Uploaded_documents.map((upload: any) => {
           return (
             <Document
-              img_url={upload.Image}
+              // img_url={upload.Image}
               date={upload.dateCreated}
               title={upload.Title}
               status={upload.Document_status}

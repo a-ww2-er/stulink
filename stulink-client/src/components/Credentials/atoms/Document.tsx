@@ -12,7 +12,7 @@ const Document = ({ status, title, date }: DocumentProps) => {
   return (
     <div className="document">
       <div>
-        <LazyLoadImage src={img_url} alt={img_url} />
+        {/* <LazyLoadImage src={img_url} alt={img_url} /> */}
         <span>
           <h3>{title}</h3>
           <span>{date}</span>

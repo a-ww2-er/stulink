@@ -26,7 +26,6 @@ app.get("/", (req: express.Request, res: express.Response) => {
   res.send("StuLink Api Up And Runnning");
 });
 app.use("/api/auth", authRoute);
-app.use("/private", testRoute);
 
 //Error handling Middleware (must be called last)
 app.use(errorHandler);

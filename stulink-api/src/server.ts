@@ -5,7 +5,7 @@ import { connectdb } from "./config/db";
 import cookieParser from "cookie-parser";
 import errorHandler from "./middleware/errors";
 //Import routes
-import authRoute from "../src/routes/auth.route";
+import authRoute from "./routes/auth.route";
 
 //Configurations
 dotenv.config();

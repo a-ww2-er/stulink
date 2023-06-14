@@ -1,4 +1,7 @@
+import { MdArrowDropDown } from "react-icons/md";
 import { Link } from "react-router-dom";
+import HeroSection from "../../components/Home/HeroSection";
+import InfoSection from "../../components/Home/InfoSection";
 import MockForm from "../MockForm";
 
 type HomePageProps = {
@@ -6,31 +9,23 @@ type HomePageProps = {
 };
 
 const HomePage = ({ onMockData }: HomePageProps) => {
-  const handleMockData = (data: any) => {
-    onMockData(data);
-    return data
-  };
+  // const handleMockData = (data: any) => {
+  //   onMockData(data);
+  //   return data
+  // };
+  // console.log(onMockData)
+  const navBarLinks = [
+  { id: 0, link: "Community" },
+  { id: 1, link: "Explore" },
+  { id: 2, link: "News" },
+  { id: 3, class: "support_btn", link: "Support" },
+  { id: 4, class: "signin_btn", link: "Sign in", icon: <MdArrowDropDown /> },
+];
+
   return (
     <>
-      <section
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          backgroundColor: "grey",
-          textDecoration: "underline",
-        }}
-      >
-        <Link to="/login">Login</Link>
-        <Link to="/dashboard/123/projects">dashboard</Link>
-        <Link to="/register">register</Link>
-      </section>
-      <div>HomePage</div>
-      <span>
-        working email for login: danny20@gmail.com
-        <br />
-        <span> password: good</span>
-      </span>
-      <MockForm handleMockData={handleMockData} />
+      <HeroSection navBarLinks={navBarLinks} />
+      <InfoSection />
     </>
   );
 };

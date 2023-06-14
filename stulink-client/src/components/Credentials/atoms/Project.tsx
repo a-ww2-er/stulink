@@ -4,7 +4,7 @@ type ProjectProps = {
   key: string
 };
 import { IoMdArrowForward } from "react-icons/io";
-import "../styles/credentials.scss";
+import "../credentials.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Project = ({ title, img_url, key }: ProjectProps) => {

@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { FormikValues, useFormik } from "formik";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 // This is the form created for testing purposes.
@@ -17,6 +18,7 @@ const validationSchema = yup.object({
 });
 
 const MockForm = ({ handleMockData }: MockFormProps) => {
+  const navigate = useNavigate();
   const retrieveUserData = async (values: FormikValues) => {
     try {
       const res = await axios.get("http://localhost:8000/users");
@@ -28,6 +30,8 @@ const MockForm = ({ handleMockData }: MockFormProps) => {
       }
       localStorage.setItem("userData", userData);
       handleMockData(userData);
+       navigate("/dashboard/projects")
+  
     } catch (error: any) {
       console.error(error.message);
     }

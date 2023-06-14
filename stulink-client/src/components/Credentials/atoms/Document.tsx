@@ -1,5 +1,5 @@
 import { MdOutlineDelete } from "react-icons/md";
-import "../styles/credentials.scss";
+import "../credentials.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 type DocumentProps = {

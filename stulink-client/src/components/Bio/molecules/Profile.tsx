@@ -1,6 +1,6 @@
 import { FiEdit } from "react-icons/fi";
 import { useContext } from "react";
-import { MockUserData } from "../../../context/MockData";
+import { MockUserData } from "../../../utilities/context/MockData";
 const Profile = () => {
   const mockData: any = useContext(MockUserData);
   

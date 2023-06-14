@@ -1,22 +1,119 @@
 .login {
-  .login_container {
+  background-color: #ffffff;
+  overflow: hidden;
+  // z-index: 3;
+  // position: relative;
+  &_container {
     display: flex;
     justify-content: space-between;
     height: 100vh;
 
     .left {
+      z-index: 1;
       color: white;
       height: 100%;
       width: 100%;
-      background:  linear-gradient(rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)), url("../../Assets/login-left.png") no-repeat center
-        center/cover;
-       display: flex;
-       flex-direction: column;
-       justify-content: space-between;
+      padding-left: 2.5%;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../Assets/login-left.png") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .message {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        h1 {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+        h3 {
+          font-weight: 400;
+          font-size: 1.7rem;
+          text-transform: capitalize;
+        }
+        p {
+          width: 40%;
+          font-weight: 300;
+          font-size: 1rem;
+        }
+      }
     }
-    .right{
+    .right {
+      overflow: hidden;
+      position: relative;
       width: 50%;
+    }
+  }
+  .authentication_page_navbar {
+    .navbar_container {
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        li {
+          font-size: 0.9rem;
+          font-weight: 400;
+          img {
+            width: 150px;
+
+            object-fit: cover;
+          }
+          a {
+            color: white;
+          }
+        }
+        .support_btn {
+          border: solid 1px white;
+          padding: 0.8% 1.6%;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+section.container {
+  height: 100%;
+  width: 100%;
+  padding: 15%;
+
+  span:first-child {
+    width: 100%;
+    color: rgb(189, 34, 34);
+    display: grid;
+    align-items: flex-end;
+  }
+  span:nth-child(2){
+    font-weight: 600;
+    color:var(--primary-color);
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  section{
+    font-size: 1.5rem;
+  }
+  span:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    a {
+      padding: 3% 5%;
+      background: var(--primary-color);
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: capitalize;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      background: #1f1f1f;
+      color: #fff;
     }
   }
 }

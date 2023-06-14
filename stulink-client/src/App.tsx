@@ -13,6 +13,7 @@ import { useState } from "react";
 import { MockUserData } from "./context/MockData";
 import { AuthContext, AuthContextValues } from "./context/AuthContext";
 import { HelmetProvider } from "react-helmet-async";
+import Overview from "./components/Overview/Overview";
 
 const App = () => {
   // these are layouts for eachpages...<outlet /> tells reactrouter to render their children elements if any...
@@ -67,6 +68,10 @@ const App = () => {
       path: "/",
       element: <HomePage onMockData={onMockData} />,
     },
+    // {
+    //   path: "/overview", //Temporary route, will be deleted soon
+    //   element: <Overview/>
+    // },
     {
       path: "/",
       element: <DashboardLayout />,

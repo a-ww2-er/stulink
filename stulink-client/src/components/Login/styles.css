@@ -1,0 +1,109 @@
+.form {
+  padding: 20% 18% 10%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.form section {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+.form section article span {
+  display: block;
+  width: 60px;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  height: 6px;
+}
+.form section article h1 {
+  color: var(--primary-color);
+  font-size: 26px;
+}
+.form section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form section form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.form section form div span {
+  display: flex;
+  align-items: center;
+  border: solid 1px grey;
+  border-radius: 5px;
+  height: 30px;
+}
+.form section form div span input {
+  height: 90%;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.form section form div span input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+.form section .remember_me {
+  display: flex;
+  justify-content: space-between;
+}
+.form section .remember_me p {
+  text-decoration: underline;
+}
+.form section .login_btn {
+  display: flex;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 100%;
+  padding: 0.3rem 2.4rem;
+  border-radius: 5px;
+}
+.form section .google_btn {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  padding: 0.3rem 2.4rem;
+  border-radius: 6px;
+  border: solid 1px grey;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.form section .or {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.form section .or span {
+  border-top: solid 1px grey;
+  width: 100%;
+}
+
+.login_navbar .navbar_container ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.login_navbar .navbar_container ul li img {
+  width: 180px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.login_navbar .navbar_container ul li a {
+  color: white;
+}/*# sourceMappingURL=styles.css.map */

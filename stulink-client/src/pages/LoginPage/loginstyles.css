@@ -1,0 +1,17 @@
+.login .login_container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+.login .login_container .left {
+  color: white;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../Assets/login-left.png") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login .login_container .right {
+  width: 50%;
+}/*# sourceMappingURL=loginstyles.css.map */

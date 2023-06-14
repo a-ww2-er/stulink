@@ -12,9 +12,9 @@ type NewsProps = {
 };
 const News = ({ classname, image }: NewsProps) => {
   return (
-    <Link to="#" className="news_link">
+    <Link to="#" className={`news_link ${classname}`}>
       <LazyLoadImage src={images(800, 400, image)} alt="newsimg" />
-      <section>
+      <section >
         <h3>Mark Wesley returns</h3>
         <p>
           Read the epic story of an icon returning from the past to the future

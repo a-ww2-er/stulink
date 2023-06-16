@@ -18,12 +18,6 @@ import Select, { GroupBase, OptionsOrGroups } from "react-select";
 import UploadAndReturnImage from "../../UploadAndReturnImage";
 import "../styles.scss";
 
-declare module "yup" {
-  interface MixedSchema {
-    oneOfSchema(schemas: yup.AnySchema[] | any): MixedSchema;
-  }
-}
-
 type form_object = {
   warning: ReactNode;
   options: OptionsOrGroups<string, GroupBase<string>> | undefined;
@@ -53,22 +47,37 @@ export const DropdownPlaceholder = (item: dropdownPlaceholder) => {
   );
 };
 
+declare module "yup" {
+  interface MixedSchema {
+    oneOfSchema(schemas: yup.AnySchema[] | any): MixedSchema;
+  }
+}
 //creating a reuseable yup method to validate with multiple schemas
 yup.addMethod<yup.MixedSchema>(
   yup.MixedSchema,
   "oneOfSchema",
   function (schemas: yup.AnySchema[]) {
-    return this.test(
-      "one-of-schemas",
-      "Please ensure this field is filled correctly",
-      (item: any) =>
-        schemas.some((schema) => schema.isValidSync(item, { strict: true }))
+    return this.test("one-of-schemas", "This field is Required", (item: any) =>
+      schemas.some((schema) => schema.isValidSync(item, { strict: true }))
     );
   }
 );
 
 //yup validation schema for formik
 const validationSchema = yup.object({
+  country: yup
+    .mixed()
+    .oneOfSchema([
+      yup
+        .object()
+        .shape({
+          label: yup.string().required(),
+          value: yup.string().required(),
+        })
+        .nullable()
+        .required("This field is required"),
+    ])
+    .required("This field is required"),
   firstName: yup
     .string()
     .matches(
@@ -101,19 +110,7 @@ const validationSchema = yup.object({
       "Please fill in a valid Mobile number"
     )
     .required("This field is required"),
-  country: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
+
   dateOfBirth: yup.string().required("Date is required"),
   gender: yup
     .mixed()
@@ -281,7 +278,7 @@ const Form = (props: {
   let prevFormIndex: null | number = tupl[0];
   let direction = formIndex > prevFormIndex ? 1 : -1;
 
-  const profilePhotoRef = useRef(null);
+  const profilePhotoRef = useRef<any>(null);
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
 

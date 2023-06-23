@@ -1,40 +1,42 @@
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
+import { connectdb } from "./config/db";
+import cookieParser from "cookie-parser";
+import errorHandler from "./middleware/errors";
+//Import routes
+import testRoute from "../src/routes/test";
+import authRoute from "../src/routes/auth.route";
+import projectRoute from "../src/routes/project"
 
-//import routes
-import dashboardRoute from "./routes/dashboardRoute";
 
-//configurations
+//Configurations
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const app: express.Application = express();
 
-//middlewares
+//Connect MongoDB
+connectdb();
+
+//Middlewares
 app.use(express.json());
+app.use(cookieParser());
+// app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors())
 
-//connect MongoDB
-const connectdb = async () => {
-  try {
-   const conn = await mongoose.connect(process.env.MONGO, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
-    console.log(`Connected to MongoDB :${conn.connection.host}`);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-};
+//Routes
+app.use("/api/auth", authRoute);
+app.use("/private", testRoute);
+app.use("/projects", projectRoute)
 
-//routes
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("hello world");
-});
-app.use("/dashboard", dashboardRoute);
+//Error handling Middleware (must be called last)
+app.use(errorHandler);
 
-//port
-app.listen(port, () => {
-  connectdb();
+//Server Port with extra error handling
+const server = app.listen(port, () => {
   console.log(`server running on port ${port}`);
+});
+process.on("unhandledRejection", (error, promise) => {
+  console.log(`Logged Error ${error}`);
+  server.close(() => process.exit(1));
 });

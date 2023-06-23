@@ -1,0 +1,32 @@
+.bio {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  gap: 20px;
+}
+.bio input {
+  height: 50px;
+  width: 200px;
+  padding: 0.4em;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.bio section {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 20%;
+  margin: 0 auto;
+  padding: 1.5em;
+  gap: 20px;
+}
+.bio section h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=biopage.css.map */

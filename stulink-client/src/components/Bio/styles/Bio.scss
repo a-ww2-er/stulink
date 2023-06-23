@@ -1,0 +1,116 @@
+.profile_container {
+  display: flex;
+  flex-direction: row !important;
+  align-items: start;
+  padding: 1em;
+  justify-content: space-evenly;
+  button {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin: 0 auto;
+
+  &_picture {
+   
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+
+  &_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+
+.personal_data {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%;
+  gap: 30px;
+  text-align: start;
+  padding: 1em;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.occupational_details {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
+  padding: 2em;
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.school_details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.change_password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    width: 150px;
+    height: 50px;
+    border: solid 2px var(--theme-red);
+    color: var(--theme-red);
+    background: none;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+}
+
+.delete_button {
+  width: 200px;
+  height: 50px;
+  color: var(--bg-color);
+  background-color: var(--theme-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  gap: 5px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 55px;
+}
+
+button {
+  cursor: pointer;
+}

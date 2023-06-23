@@ -7,6 +7,8 @@ import errorHandler from "./middleware/errors";
 //Import routes
 import testRoute from "../src/routes/test";
 import authRoute from "../src/routes/auth.route";
+import projectRoute from "../src/routes/project"
+
 
 //Configurations
 dotenv.config();
@@ -19,11 +21,13 @@ connectdb();
 //Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+// app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors())
 
 //Routes
 app.use("/api/auth", authRoute);
 app.use("/private", testRoute);
+app.use("/projects", projectRoute)
 
 //Error handling Middleware (must be called last)
 app.use(errorHandler);

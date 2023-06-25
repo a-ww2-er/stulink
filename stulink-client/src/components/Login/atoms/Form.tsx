@@ -11,7 +11,7 @@ import axios from "axios";
 import { AppContext } from "../../../utilities/context";
 import LoadingBar from "../../LoadingBar/LoadingBar";
 import { AuthContext } from "../../../utilities/context/AuthContext";
-import axiosRequest from "../../utilities/axiosRequest";
+import axiosRequest from "../../../utilities/axiosRequest";
 
 const validationSchema = yup.object({
   email: yup
@@ -36,7 +36,7 @@ const Form = () => {
 
     try {
       setIsLoading(true);
-      const res = await axiosRequest.post("auth/login", {
+      const res = await axiosRequest.post("/auth/login", {
         ...values,
         username: email,
       });

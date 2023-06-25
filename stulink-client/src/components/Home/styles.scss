@@ -89,7 +89,6 @@
 }
 %navbar_container {
   .navbar_container {
-  
     width: 100%;
     ul {
       transition: all 0.3s;
@@ -148,7 +147,7 @@
 }
 .home_page_sticky_navbar {
   padding: var(--home-page-padding);
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -174,7 +173,6 @@
           object-fit: cover;
         }
         a {
-   
         }
         a:hover {
           color: var(--primary-color);

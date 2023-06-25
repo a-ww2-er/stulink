@@ -16,7 +16,9 @@ import {
 } from "../../../utilities/transitions";
 import Select, { GroupBase, OptionsOrGroups } from "react-select";
 import UploadAndReturnImage from "../../UploadAndReturnImage";
+import axiosRequest from "../../../utilities/axiosRequest";
 import "../styles.scss";
+
 
 declare module "yup" {
   interface MixedSchema {
@@ -738,7 +740,7 @@ const UploadForm = () => {
 
     try {
       setIsLoading(true);
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axiosRequest.post("/auth/register", {
         ...values,
         acc: { student: values.student, staff: values.staff },
       });

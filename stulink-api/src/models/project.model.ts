@@ -15,14 +15,14 @@ const projectSchema = new Schema(
       type: String,
       required: [true, "Project image is missing"],
     },
-
+    Team: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     Description: {
       type: String,
       required: [true, "A description is required for your project"],
     },
     // Team: { type: Schema.Types.ObjectId, ref: "User" },
 
-    ProjectOwner: { type: Schema.Types.ObjectId, ref: "User" },
+    ProjectOwner: { type: String, required:true },
 
     DueDate: {
       type: String,

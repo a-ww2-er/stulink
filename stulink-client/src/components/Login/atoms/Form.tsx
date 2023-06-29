@@ -10,6 +10,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { AppContext } from "../../../utilities/context";
 import LoadingBar from "../../LoadingBar/LoadingBar";
+import axiosRequest from "../../../utilities/axiosRequest";
 import { AuthContext } from "../../../utilities/context/AuthContext";
 
 const validationSchema = yup.object({

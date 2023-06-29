@@ -7,7 +7,7 @@ import errorHandler from "./middleware/errors";
 //Import routes
 import testRoute from "../src/routes/test";
 import authRoute from "../src/routes/auth.route";
-import projectRoute from "../src/routes/project"
+import projectRoute from "../src/routes/project.route"
 
 
 //Configurations
@@ -27,7 +27,7 @@ app.use(cors())
 //Routes
 app.use("/api/auth", authRoute);
 app.use("/private", testRoute);
-app.use("/projects", projectRoute)
+app.use("/api/project", projectRoute)
 
 //Error handling Middleware (must be called last)
 app.use(errorHandler);

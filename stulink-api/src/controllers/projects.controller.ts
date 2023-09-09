@@ -36,7 +36,6 @@ export const createProject = async (req, res: Response, next: NextFunction) => {
 };
 
 export const viewProjects = async (req, res: Response, next: NextFunction) => {
-  const decodedToken = jwt.decode(req.cookies.accessToken);
   const user = await User.findById(req?.user?.id);
   try {
     const projects = await Project.find({ ProjectOwner: user._id }).populate(

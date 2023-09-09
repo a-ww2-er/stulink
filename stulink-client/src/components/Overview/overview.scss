@@ -76,14 +76,14 @@
 }
 
 .library_history_nav {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   font-size: 1.5rem;
   ul {
     display: flex;
     gap: 15px;
     .active {
-      border-bottom: solid 8px var(--primary-color);
+      border-bottom: solid 12px var(--primary-color);
       font-weight: bold;
       line-height: 20px;
     }
@@ -94,24 +94,25 @@
   width: 80%;
   margin: 0 auto;
   height: 100%;
-  padding: 1.5em;
-  .library_grid{
+  padding: 2.5em;
+  .library_grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto or 100px;
-    grid-auto-flow: dense ;
-    gap: 10px;
-   .news{
-        grid-column: 3;
-        grid-row: 2 / 4;
-     } 
-   .posts{  grid-column: 1 / 3;
-           grid-row: 1 / 3
-        }
-  .project{ grid-column: 3;
-           grid-row: 2 / 4;
-  } 
-
+    grid-auto-flow: dense;
+    gap: 30px;
+    .news {
+      grid-column: 3;
+      grid-row: 2 / 4;
+    }
+    .posts {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+    .project {
+      grid-column: 3;
+      grid-row: 2 / 4;
+    }
   }
   .user_news {
     width: 100%;
@@ -132,7 +133,7 @@
   .user_project {
     background-color: var(--line-color);
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,6 +141,7 @@
     text-align: center;
     margin: 1em;
     color: var(--bg-color);
+    padding: .5em;
     img {
       width: 100%;
       height: 70%;

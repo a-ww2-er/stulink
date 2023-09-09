@@ -4,7 +4,7 @@ import UserProject from "./atoms/UserProject";
 import UserPost from "./atoms/UserPost";
 import Nav from "../NavBar/Nav";
 import img from "../../Assets/elijah-hiett-umfpFoKxIVg-unsplash-removebg.png";
-import News from "../Dashboard/atoms/News";
+import News from "../Projects/atoms/News";
 
 const Overview = () => {
   return (
@@ -52,6 +52,7 @@ const Overview = () => {
       </nav>
 
       <section className="library_and_history">
+        {" "}
         {/* Projects and News */}
         <div className="library_grid">
           <UserPost />

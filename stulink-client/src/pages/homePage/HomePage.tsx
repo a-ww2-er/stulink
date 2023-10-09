@@ -8,6 +8,7 @@ import ConSection from "../../components/Home/ConSection";
 import GoalsSection from "../../components/Home/GoalsSection";
 import CommentSection from "../../components/Home/CommentSection";
 import FooterSection from "../../components/Home/FooterSection";
+import FooterSections from "../../components/Home/FooterSection";
 
 type HomePageProps = {
   onMockData: (data: any) => void;
@@ -35,7 +36,7 @@ const HomePage = ({ onMockData }: HomePageProps) => {
       {/* <ConnectSection /> */}
       <GoalsSection />
       <CommentSection />
-      <FooterSection />
+      <FooterSections />
     </>
   );
 };

@@ -26,9 +26,9 @@ const HeroSection = ({ navBarLinks }: NavBarLinks) => {
   useMotionValueEvent(scrollY, "change", (latest) => {
     return setScroll(latest);
   });
-    useEffect(() => {
-      console.log(scroll);
-    }, [scroll]);
+  useEffect(() => {
+    console.log(scroll);
+  }, [scroll]);
   return (
     <motion.div
       variants={{

@@ -1,10 +1,12 @@
 .hero_section {
   width: 100%;
   height: 100%;
+
   // min-width: -webkit-fill-available;
   // min-width: -moz-fit-content;
   // min-width: fit-content;
   background: var(--hero-section-image);
+  background-color: #dcdcdc;
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -73,7 +75,7 @@
 .btn_2 {
   padding: 3% 5%;
   background: var(--primary-color);
-  color: #ffffff;
+  color: #1f1f1f;
   font-size: 20px;
   font-weight: 500;
   text-transform: capitalize;
@@ -206,8 +208,10 @@
 }
 .info_section {
   // position: relative;
-  background-color: rgb(255, 255, 255);
+  // background-color: rgb(255, 255, 255);
+  background-color: #dcdcdc;
   z-index: 1;
+
   &_container {
     height: 100%;
     width: 100%;
@@ -216,9 +220,10 @@
     // display: flex;
     align-items: center;
     // justify-content: right;
-    gap: 4rem;
+    gap: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // grid-template-columns: 1fr 2fr;
 
     //if we later get a problem with these position absolute
     //elements chnaging position on diffrent resolutiions
@@ -247,6 +252,9 @@
       //   flex-direction: column;
       //   justify-content: space-between;
       .right_bg {
+        display: block;
+        object-fit: cover;
+        max-width: 80%;
       }
       .social_pill {
         position: absolute;
@@ -271,8 +279,10 @@
       }
 
       .social_pill:nth-child(2) {
-        top: 20%;
-        right: 2rem;
+        // top: -3%;
+        // right: -2%;
+        bottom: 68%;
+        left: 49%;
       }
       .social_pill:nth-child(3) {
         top: 55%;
@@ -280,8 +290,8 @@
       }
       .social_pill:nth-child(4) {
         padding: 1% 1.5%;
-        bottom: 1%;
-        right: 20%;
+        bottom: 10%;
+        right: 30%;
       }
       // }
 
@@ -292,14 +302,20 @@
       }
     }
     .left {
-      margin-left: auto;
+      margin-right: 70px;
+      padding-bottom: 100px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      p {
+        margin-top: 15px;
+        margin-bottom: 30px;
+      }
       gap: 20%;
       h2 {
         text-transform: capitalize;
-        font-size: 4rem;
+        font-size: 3rem;
+
         span {
           color: var(--primary-color);
         }
@@ -311,9 +327,332 @@
     }
   }
 }
+.connect {
+  width: 100%;
+  height: 100%;
+  &__header {
+    text-align: center;
+    padding-bottom: 70px;
+    h1 {
+      font-size: 50px;
+      margin-top: 150px;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: auto;
+      margin-bottom: 10px;
+      font-size: 20px;
 
-// @media screen and (max-width: 320px) {
-//   .info_section_container{
-//     grid-template-rows: 1fr 1fr;
+      font-weight: 300;
+      position: relative;
+
+      display: inline-block;
+    }
+  }
+}
+.section {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  &__img {
+    flex-basis: 30%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    cursor: pointer;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #000000);
+    opacity: 0.5;
+  }
+  &__text {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 1;
+    font-size: larger;
+  }
+}
+
+// conlsection
+.feature {
+  width: 100%;
+  height: 100%;
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+  &__text {
+    text-align: center;
+    h1 {
+      font-size: 50px;
+    }
+    img {
+      background: linear-gradient(
+        to right,
+        rgb(0, 255, 255),
+        rgba(0, 0, 255, 1)
+      );
+      border-radius: 2px;
+    }
+  }
+
+  &__box {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+  }
+  &__img {
+    flex-basis: 50%;
+    max-resolution: auto;
+    position: relative;
+    z-index: 10;
+
+    img {
+      width: 90%;
+      height: 90%;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; // Set the width and height to create a circular shape
+    height: 30px;
+    background-color: transparent; // Set background color to transparent
+    border: 1px solid #b2b2b2; // Black border with 2px width
+    border-radius: 50%; // Make it circular
+    margin: 10px;
+    svg {
+      width: 15px;
+
+      color: #7f7f7f;
+    }
+  }
+  &__text {
+    p {
+      padding: 0 0px;
+      text-align: initial;
+    }
+  }
+}
+.features {
+  flex-basis: 50%;
+}
+.img__text {
+  position: absolute;
+  color: #fff;
+  font-size: 10px;
+  bottom: 25px;
+  left: 50px;
+  font-size: 35px;
+}
+.osa {
+  color: red;
+  background-color: #dcdcdc;
+  position: absolute;
+
+  left: 70px;
+  bottom: -30px;
+  width: 90%;
+  z-index: -2;
+  height: 85vh;
+}
+.contributor {
+  display: flex;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  background-color: #4c4c4c;
+
+  color: #fff;
+  align-items: center;
+  justify-content: space-around;
+
+  &__part1 {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    span {
+      color: var(--primary-color);
+    }
+    p {
+      color: #cccccc;
+    }
+  }
+}
+.btn_3 {
+  padding: 1% 5%;
+
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+
+  border: none;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+// commentSection
+.testimonial {
+  width: 100%;
+  height: 100%;
+  background-color: #dcdcdc;
+  &__row {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  &__col {
+    flex-basis: 28%;
+    padding: 0px 10px;
+    margin-bottom: 3px;
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px 3px #d0e0df14;
+    transition: transform 0.5s;
+    p {
+      font-size: 13px;
+      color: blue;
+      line-height: 15px;
+      margin-left: 15px;
+    }
+    h3 {
+      font-weight: 350;
+      font-size: 15px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+  &__user {
+    align-items: center;
+    margin: 20px 0;
+    img {
+      width: 350px;
+
+      align-items: center;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 22px;
+    margin: 15px;
+  }
+  &__icon {
+    margin-right: 5px;
+  }
+  &__text {
+    text-align: center;
+    padding-bottom: 50px;
+    margin-top: 50px;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 400;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.btn-4 {
+  padding: 1.3% 3%;
+  background: var(--primary-color);
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 9px;
+  margin: 2% 0 5% 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.btn-5 {
+  font-size: 20px;
+  margin-left: 15px;
+}
+// .container__row {
+//   display: flex;
+//   justify-content: space-around;
+//   margin: 100px;
+//   padding: 40px 100px;
+// }
+// .row__col {
+//   h4 {
+//     margin-bottom: 10px;
+//     font-size: 30px;
 //   }
 // }
+.container__row {
+  display: flex;
+  justify-content: space-around;
+  margin: 100px;
+  padding: 40px 100px;
+}
+
+.row__col {
+  text-align: center; /* Center align the content */
+}
+
+.row__col h4 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.row__col div {
+  display: flex;
+  flex-direction: column; /* Display links in a column layout */
+  align-items: flex-start; /* Center align the links horizontally */
+}
+
+.row__col a {
+  text-decoration: none;
+  color: #999999;
+  font-size: 16px;
+  margin: 5px 0; /* Add margin between links for spacing */
+}
+.row {
+  background-color: #4c4c4c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.socialIcon {
+}

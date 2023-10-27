@@ -102,6 +102,10 @@ const userSchema = new Schema(
       value: { type: String, required: false },
       label: { type: String, required: false },
     },
+    userProjects: {
+      type: Schema.Types.Array,
+      ref: "Project",
+    },
     resetPasswordToken: String,
     resetPasswordExpire: Date,
   },
@@ -126,7 +130,7 @@ userSchema.methods.getResetPasswordToken = function () {
     .createHash("sha256")
     .update(resetToken)
     .digest("hex");
-    this.resetPasswordExpire = Date.now()+10 * (60 * 1000);
+  this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
   return resetToken;
 };
 

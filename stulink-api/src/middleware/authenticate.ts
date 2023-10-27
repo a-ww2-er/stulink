@@ -15,7 +15,7 @@ export const protectRegularEndpoint = async (req,res,next) =>{
         if(!user){
             return next(new ErrorResponse("User not found",404))
         }
-      
+      //req.user = JSON.parse(user)
         next();
     } catch (error) {
         return next(new ErrorResponse("You are not authorized to access this page",401))

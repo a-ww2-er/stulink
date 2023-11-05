@@ -65,19 +65,19 @@ yup.addMethod<yup.MixedSchema>(
 
 //yup validation schema for formik
 const validationSchema = yup.object({
-  country: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
+  // country: yup
+  //   .mixed()
+  //   .oneOfSchema([
+  //     yup
+  //       .object()
+  //       .shape({
+  //         label: yup.string().required(),
+  //         value: yup.string().required(),
+  //       })
+  //       .nullable()
+  //       .required("This field is required"),
+  //   ])
+  //   .required("This field is required"),
   firstName: yup
     .string()
     .matches(
@@ -96,20 +96,20 @@ const validationSchema = yup.object({
     .string()
     .email("Please ensure this field is filled correctly")
     .required("This field is required"),
-  schoolname: yup
-    .string()
-    .matches(
-      /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
-      "Please ensure this field is filled correctly"
-    )
-    .required("This field is required"),
-  mobileNumber: yup
-    .string()
-    .matches(
-      /((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))/,
-      "Please fill in a valid Mobile number"
-    )
-    .required("This field is required"),
+  // schoolname: yup
+  //   .string()
+  //   .matches(
+  //     /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
+  //     "Please ensure this field is filled correctly"
+  //   )
+  //   .required("This field is required"),
+  // mobileNumber: yup
+  //   .string()
+  //   .matches(
+  //     /((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))/,
+  //     "Please fill in a valid Mobile number"
+  //   )
+  //   .required("This field is required"),
 
   dateOfBirth: yup.string().required("Date is required"),
   gender: yup
@@ -123,100 +123,100 @@ const validationSchema = yup.object({
         })
         .nullable()
         .required("This field is required"),
-    ])
-    .required("This field is required"),
-  schoolId: yup
-    .string()
-    // .matches(/^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*/, "Invalid school ID")
-    .min(6, "Invalid school ID")
-    .max(6, "6 digit code"),
-  schoolCountry: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
-  faculty: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
-  department: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
-  student: yup.boolean().required("This field is required"),
-  staff: yup.boolean().required("This field is required"),
-  occupation: yup
-    .string()
-    .matches(
-      /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
-      "Please ensure this field is filled correctly"
-    )
-    .required("This field is required"),
-  businessName: yup
-    .string()
-    .matches(
-      /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
-      "Please ensure this field is filled correctly"
-    )
-    .required("This field is required"),
-  businessUrl: yup
-    .string()
-    .matches(
-      /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/,
-      "Invalid URL"
-    )
-    .required("This field is required"),
-  occupationStatus: yup
-    .mixed()
-    .oneOfSchema([
-      yup
-        .object()
-        .shape({
-          label: yup.string().required(),
-          value: yup.string().required(),
-        })
-        .nullable()
-        .required("This field is required"),
-    ])
-    .required("This field is required"),
+    ]),
+  //   .required("This field is required"),
+  // schoolId: yup
+  //   .string()
+  //   // .matches(/^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*/, "Invalid school ID")
+  //   .min(6, "Invalid school ID")
+  //   .max(6, "6 digit code"),
+  // schoolCountry: yup
+  //   .mixed()
+  //   .oneOfSchema([
+  //     yup
+  //       .object()
+  //       .shape({
+  //         label: yup.string().required(),
+  //         value: yup.string().required(),
+  //       })
+  //       .nullable()
+  //       .required("This field is required"),
+  //   ])
+  //   .required("This field is required"),
+  // faculty: yup
+  //   .mixed()
+  //   .oneOfSchema([
+  //     yup
+  //       .object()
+  //       .shape({
+  //         label: yup.string().required(),
+  //         value: yup.string().required(),
+  //       })
+  //       .nullable()
+  //       .required("This field is required"),
+  //   ])
+  //   .required("This field is required"),
+  // department: yup
+  //   .mixed()
+  //   .oneOfSchema([
+  //     yup
+  //       .object()
+  //       .shape({
+  //         label: yup.string().required(),
+  //         value: yup.string().required(),
+  //       })
+  //       .nullable()
+  //       .required("This field is required"),
+  //   ])
+  //   .required("This field is required"),
+  // student: yup.boolean().required("This field is required"),
+  // staff: yup.boolean().required("This field is required"),
+  // occupation: yup
+  //   .string()
+  //   .matches(
+  //     /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
+  //     "Please ensure this field is filled correctly"
+  //   )
+  //   .required("This field is required"),
+  // businessName: yup
+  //   .string()
+  //   .matches(
+  //     /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
+  //     "Please ensure this field is filled correctly"
+  //   )
+  //   .required("This field is required"),
+  // businessUrl: yup
+  //   .string()
+  //   .matches(
+  //     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/,
+  //     "Invalid URL"
+  //   )
+  //   .required("This field is required"),
+  // occupationStatus: yup
+  //   .mixed()
+  //   .oneOfSchema([
+  //     yup
+  //       .object()
+  //       .shape({
+  //         label: yup.string().required(),
+  //         value: yup.string().required(),
+  //       })
+  //       .nullable()
+  //       .required("This field is required"),
+  //   ])
+  //   .required("This field is required"),
   userName: yup
     .string()
     .matches(/^[a-zA-Z0-9]{4,16}$/, "Invalid Username")
     .required("This field is required"),
-  websiteUrl: yup
-    .string()
-    .matches(
-      /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/,
-      "Invalid URL"
-    )
-    .min(6, "Please ensure this field is filled correctly")
-    .required("This field is required"),
+  // websiteUrl: yup
+  //   .string()
+  //   .matches(
+  //     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/,
+  //     "Invalid URL"
+  //   )
+  //   .min(6, "Please ensure this field is filled correctly")
+  //   .required("This field is required"),
   password: yup
     .string()
     .matches(
@@ -229,13 +229,13 @@ const validationSchema = yup.object({
     .string()
     .required("This field is required")
     .oneOf([yup.ref("password")], "Passwords do not match"),
-  consent: yup.boolean().required("This field is required"),
-  profilePhoto: yup
-    .string()
-    .matches(
-      /((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/,
-      "Profile Upload Failed"
-    ),
+  // consent: yup.boolean().required("This field is required"),
+  // profilePhoto: yup
+  //   .string()
+  //   .matches(
+  //     /((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/,
+  //     "Profile Upload Failed"
+  //   ),
 });
 
 //main form , taking in props from "withformik()"
@@ -738,7 +738,7 @@ const UploadForm = () => {
       setIsLoading(true);
       const res = await axios.post("http://localhost:5000/api/auth/register", {
         ...values,
-        acc: { student: values.student, staff: values.staff },
+        // acc: { student: values.student, staff: values.staff },
       });
       setIsLoading(false);
       setErrors("");
@@ -767,27 +767,27 @@ const UploadForm = () => {
       firstName: "",
       lastName: "",
       email: "",
-      mobileNumber: "",
-      gender: [],
-      dateOfBirth: "",
-      schoolId: "",
-      schoolname: "",
-      schoolCountry: [],
-      faculty: [],
-      department: [],
-      student: false,
-      staff: false,
-      occupation: "",
-      businessName: "",
-      businessUrl: "",
-      occupationStatus: [],
-      userName: "",
-      websiteUrl: "",
-      country: [],
-      password: "",
-      confirmPassword: "",
-      consent: false,
-      profilePhoto: "",
+      // mobileNumber: "",
+       gender: [],
+       dateOfBirth: "",
+      // schoolId: "",
+      // schoolname: "",
+      // schoolCountry: [],
+      // faculty: [],
+      // department: [],
+      // student: false,
+      // staff: false,
+      // occupation: "",
+      // businessName: "",
+      // businessUrl: "",
+      // occupationStatus: [],
+       userName: "",
+      // websiteUrl: "",
+      // country: [],
+       password: "",
+       confirmPassword: "",
+       consent: true,
+      // profilePhoto: "",
     }),
     enableReinitialize: false,
     handleSubmit: submit,

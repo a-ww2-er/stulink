@@ -89,3 +89,10 @@ const sendToken = (user, statusCode, res) => {
     .status(statusCode)
     .json({ sucess: true, token, user });
 };
+
+// export const dateCreated = async(req,res,next)=>{
+//   let users = await User.aggregate([
+//     {$sort : {dateCreated:-1}}
+//     ])
+//     res.status(200).json(users)
+// }

@@ -5,7 +5,7 @@ import {
   logout,
   forgotPassword,
   resetPassword,
-} from "../controllers/auth.controller";
+} from "../controllers/user.controller";
 
 const router = express.Router();
 
